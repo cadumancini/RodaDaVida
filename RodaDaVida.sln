@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RodaDaVida_Shared", "RodaDaVida\RodaDaVida_Shared.csproj", "{04FB45BB-2A85-4063-AA8D-3B709C0FD700}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RodaDaVidaShared", "RodaDaVida\RodaDaVidaShared.csproj", "{04FB45BB-2A85-4063-AA8D-3B709C0FD700}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RodaDaVida_Android", "RodaDaVida_Android\RodaDaVida_Android.csproj", "{A46A3F3B-6BDD-4AF2-9940-8E7D3BC404FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RodaDaVidaAndroid", "RodaDaVida_Android\RodaDaVidaAndroid.csproj", "{A46A3F3B-6BDD-4AF2-9940-8E7D3BC404FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

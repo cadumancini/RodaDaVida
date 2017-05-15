@@ -3,5 +3,61 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:id="@+id/rootLayout"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+    <TextView
+        android:text="Seja bem vindo!"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:id="@+id/txtBemVindo"
+        android:paddingTop="20dp" />
+    <TextView
+        android:text="O aplicativo Roda da Vida vai te ajudar a melhorar todos as áreas da sua vida, através da sua autoavaliação, e depois de acordo com as atividades que você mesmo vai definir.\nDigite abaixo seu nome para começarmos.\nTe vejo do outro lado!"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:id="@+id/txtDescricao"
+        android:paddingBottom="30dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="30dp" />
+    <TextView
+        android:text="Seu nome:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textColor="@android:color/black"
+        android:id="@+id/txtSeuNome"
+        android:paddingBottom="10dp"
+        android:paddingLeft="40dp" />
+<!--<com.google.android.gms.common.SignInButton
+        android:id="@+id/btnLoginGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="10dp" /> -->
+    <EditText
+        android:inputType="textCapWords"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editNome"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp" />
+    <Button
+        android:text="Continuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCadastrar"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:layout_gravity="center" />
 </LinearLayout>
