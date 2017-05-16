@@ -42,7 +42,16 @@
     <None Include="RodaDaVida.asta" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Database.cs" />
+    <Compile Include="Managers\AreaManager.cs" />
+    <Compile Include="Managers\TarefaManager.cs" />
+    <Compile Include="Managers\UsuarioAreaManager.cs" />
+    <Compile Include="Managers\UsuarioManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AreaRepository.cs" />
+    <Compile Include="Repositories\TarefaRepository.cs" />
+    <Compile Include="Repositories\UsuarioAreaRepository.cs" />
+    <Compile Include="Repositories\UsuarioRepository.cs" />
     <Compile Include="Tabelas\Area.cs" />
     <Compile Include="Tabelas\Tarefa.cs" />
     <Compile Include="Tabelas\Usuario.cs" />
