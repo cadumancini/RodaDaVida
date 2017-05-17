@@ -1,5 +1,4 @@
 ﻿using SQLite;
-using SQLiteNetExtensions.Attributes;
 using System;
 
 namespace RodaDaVidaShared.Tabelas
@@ -14,10 +13,10 @@ namespace RodaDaVidaShared.Tabelas
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
 
-        [ForeignKey(typeof(Usuario))]
+        [Indexed]
         public int UsuarioID { get; set; }
 
-        [ForeignKey(typeof(Area))]
+        [Indexed]
         public int AreaID { get; set; }
 
         public double Nota { get; set; }

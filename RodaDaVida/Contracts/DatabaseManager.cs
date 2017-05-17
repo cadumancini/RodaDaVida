@@ -25,9 +25,9 @@ namespace RodaDaVidaShared.Contracts
             return usuarioRepository.GetUsuario(id);
         }
 
-        public IEnumerable<Usuario> GetUsuarios()
+        public IList<Usuario> GetUsuarios()
         {
-            return usuarioRepository.GetUsuarios();
+            return new List<Usuario>(usuarioRepository.GetUsuarios());
         }
 
         public int saveUsuario(Usuario usuario)
@@ -45,9 +45,9 @@ namespace RodaDaVidaShared.Contracts
             return areaRepository.GetArea(id);
         }
 
-        public IEnumerable<Area> GetAreas()
+        public IList<Area> GetAreas()
         {
-            return areaRepository.GetAreas();
+            return new List<Area>(areaRepository.GetAreas());
         }
 
         public int saveArea(Area area)
@@ -65,9 +65,9 @@ namespace RodaDaVidaShared.Contracts
             return usuarioAreaRepository.GetUsuarioArea(id);
         }
 
-        public IEnumerable<UsuarioArea> GetUsuariosAreas()
+        public IList<UsuarioArea> GetUsuariosAreas()
         {
-            return usuarioAreaRepository.GetUsuariosAreas();
+            return new List<UsuarioArea>(usuarioAreaRepository.GetUsuariosAreas());
         }
 
         public int saveUsuarioArea(UsuarioArea usuarioArea)
@@ -85,9 +85,9 @@ namespace RodaDaVidaShared.Contracts
             return tarefaRepository.GetTarefa(id);
         }
 
-        public IEnumerable<Tarefa> GetTarefas()
+        public IList<Tarefa> GetTarefas()
         {
-            return tarefaRepository.GetTarefas();
+            return new List<Tarefa>(tarefaRepository.GetTarefas());
         }
 
         public int saveTarefa(Tarefa tarefa)
