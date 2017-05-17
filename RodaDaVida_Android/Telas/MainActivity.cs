@@ -3,9 +3,8 @@ using Android.Content;
 using Android.OS;
 using Android.Views.InputMethods;
 using Android.Widget;
-using RodaDaVidaAndroid.Telas;
 
-namespace RodaDaVidaAndroid
+namespace RodaDaVidaAndroid.Telas
 {
     [Activity(Label = "RodaDaVidaAndroid", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
