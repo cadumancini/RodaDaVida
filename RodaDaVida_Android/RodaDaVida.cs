@@ -12,6 +12,7 @@ namespace RodaDaVidaAndroid
         public static RodaDaVida Current { get; private set; }
         public DatabaseManager dataBaseManager { get; set; }
         SQLiteConnection conn;
+        public int idUsuarioGeral;
 
         public RodaDaVida(IntPtr handle, global::Android.Runtime.JniHandleOwnership transfer)
             : base(handle, transfer)
@@ -23,6 +24,7 @@ namespace RodaDaVidaAndroid
         {
             base.OnCreate();
 
+            idUsuarioGeral = 0;
             var sqliteFilename = "RodaDaVidaDB.db3";
             string libraryPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var path = Path.Combine(libraryPath, sqliteFilename);

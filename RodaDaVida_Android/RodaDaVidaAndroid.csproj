@@ -179,10 +179,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RodaDaVida.cs" />
+    <Compile Include="Telas\AutoAvaliacao.cs" />
     <Compile Include="Telas\MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Telas\Cadastrar.cs" />
+    <Compile Include="Telas\BemVindo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -193,7 +194,10 @@
     <AndroidResource Include="Resources\layout\Main.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Cadastrar.axml">
+    <AndroidResource Include="Resources\layout\BemVindo.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AutoAvaliacao.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
