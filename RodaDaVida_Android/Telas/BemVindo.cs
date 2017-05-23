@@ -13,16 +13,19 @@ namespace RodaDaVidaAndroid.Telas
     public class BemVindo : Activity, View.IOnTouchListener
     {
         TextView txtBemVindo;
+        LinearLayout layout;
         bool detectarToque = false;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             SetContentView(Resource.Layout.BemVindo);
 
             //Buscando controles:
             txtBemVindo = FindViewById<TextView>(Resource.Id.txtBemVindo);
+            layout = FindViewById<LinearLayout>(Resource.Id.bemVindoLayout);
+
+            layout.SetOnTouchListener(this);
 
             string nomeUsuario = "";
             bool novoUsuario;
@@ -68,7 +71,7 @@ namespace RodaDaVidaAndroid.Telas
 
         public bool OnTouch(View v, MotionEvent e)
         {
-            if (detectarToque && e.Action == MotionEventActions.Down)
+            if (detectarToque && e.Action == MotionEventActions.Up)
             {
                 var telaAutoAvaliacao = new Intent(this, typeof(AutoAvaliacao)).SetFlags(ActivityFlags.ReorderToFront);
                 StartActivity(telaAutoAvaliacao);

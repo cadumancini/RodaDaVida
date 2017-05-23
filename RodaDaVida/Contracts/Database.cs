@@ -43,7 +43,24 @@ namespace RodaDaVidaShared.Contracts
         {
             lock (locker)
             {
-                return (from i in database.Table<UsuarioArea>() select i).ToList();
+                //return (from i in database.Table<UsuarioArea>() select i).ToList();
+                return database.Query<UsuarioArea>("SELECT USUARIOAREA.* " + 
+                                                     "FROM USUARIOAREA, AREA " +
+                                                    "WHERE USUARIOAREA.AREAID = AREA.ID " +
+                                                    "ORDER BY AREA.CODIGO");
+            }
+        }
+
+        public IEnumerable<UsuarioArea> GetUsuariosAreasByCodigo(int codigo)
+        {
+            lock (locker)
+            {
+                //return (from i in database.Table<UsuarioArea>() select i).ToList();
+                return database.Query<UsuarioArea>("SELECT USUARIOAREA.* " +
+                                                     "FROM USUARIOAREA, AREA " +
+                                                    "WHERE USUARIOAREA.AREAID = AREA.ID " +
+                                                      "AND AREA.CODIGO = " + codigo.ToString() + " " +
+                                                    "ORDER BY AREA.CODIGO");
             }
         }
 
