@@ -13,13 +13,12 @@ namespace RodaDaVidaAndroid.Telas
     {
         NumberPicker picker;
         TextView pergunta;
-        IList<UsuarioArea> areasDefinidas;
-        List<int> areasDefinir;
+        IList<UsuarioArea> areasADefinir;
         private InputMethodManager imm;
+        int idAtual = 0, totalAreas;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            areasDefinir = new List<int>();
             SetContentView(Resource.Layout.AutoAvaliacao);
 
             pergunta = FindViewById<TextView>(Resource.Id.txtPergunta);
@@ -30,22 +29,11 @@ namespace RodaDaVidaAndroid.Telas
             imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
             imm.HideSoftInputFromWindow(picker.WindowToken, 0);
 
-            areasDefinidas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreas();
-            if (areasDefinidas.Count == 0)
-            {
-                pergunta.Text = "Defina a sua nota para a área Familiar:";
-            }
-            else
-            {
-                for(int i = 1; i <= 12; i++)
-                {
-                    areasDefinidas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreasByCodigo(i);
-                    if (areasDefinidas.Count == 0)
-                        areasDefinir.Add(i);
-                }
+            areasADefinir = RodaDaVida.Current.dataBaseManager.GetUsuariosAreasADefinir();
+            totalAreas = areasADefinir.Count;
 
-                areasDefinir.Sort();
-            }
+            Area area = RodaDaVida.Current.dataBaseManager.GetArea(areasADefinir[idAtual].AreaID);
+            pergunta.Text = "Defina a sua nota para a área " + area.Descricao + ":";
         }
 
     }

@@ -47,6 +47,7 @@ namespace RodaDaVidaAndroid.Telas
                         Usuario usuario = new Usuario();
                         usuario.Nome = editNome.Text;
                         RodaDaVida.Current.idUsuarioGeral = RodaDaVida.Current.dataBaseManager.saveUsuario(usuario);
+                        int tempUsuario = RodaDaVida.Current.idUsuarioGeral;
 
                         //Gravando áreas
                         Area familiar = new Area();
@@ -87,18 +88,104 @@ namespace RodaDaVidaAndroid.Telas
                         lazer.Codigo = 12;
                         lazer.Descricao = "Lazer";
 
-                        RodaDaVida.Current.dataBaseManager.saveArea(familiar);
-                        RodaDaVida.Current.dataBaseManager.saveArea(profissional);
-                        RodaDaVida.Current.dataBaseManager.saveArea(saude);
-                        RodaDaVida.Current.dataBaseManager.saveArea(fisica);
-                        RodaDaVida.Current.dataBaseManager.saveArea(financeira);
-                        RodaDaVida.Current.dataBaseManager.saveArea(economica);
-                        RodaDaVida.Current.dataBaseManager.saveArea(educacao);
-                        RodaDaVida.Current.dataBaseManager.saveArea(social);
-                        RodaDaVida.Current.dataBaseManager.saveArea(espiritual);
-                        RodaDaVida.Current.dataBaseManager.saveArea(comunidade);
-                        RodaDaVida.Current.dataBaseManager.saveArea(ecologica);
-                        RodaDaVida.Current.dataBaseManager.saveArea(lazer);
+                        familiar.ID = RodaDaVida.Current.dataBaseManager.saveArea(familiar);
+                        profissional.ID = RodaDaVida.Current.dataBaseManager.saveArea(profissional);
+                        saude.ID = RodaDaVida.Current.dataBaseManager.saveArea(saude);
+                        fisica.ID = RodaDaVida.Current.dataBaseManager.saveArea(fisica);
+                        financeira.ID = RodaDaVida.Current.dataBaseManager.saveArea(financeira);
+                        economica.ID = RodaDaVida.Current.dataBaseManager.saveArea(economica);
+                        educacao.ID = RodaDaVida.Current.dataBaseManager.saveArea(educacao);
+                        social.ID = RodaDaVida.Current.dataBaseManager.saveArea(social);
+                        espiritual.ID = RodaDaVida.Current.dataBaseManager.saveArea(espiritual);
+                        comunidade.ID = RodaDaVida.Current.dataBaseManager.saveArea(comunidade);
+                        ecologica.ID = RodaDaVida.Current.dataBaseManager.saveArea(ecologica);
+                        lazer.ID = RodaDaVida.Current.dataBaseManager.saveArea(lazer);
+
+                        UsuarioArea areaFamiliar = new UsuarioArea();
+                        UsuarioArea areaProfissional = new UsuarioArea();
+                        UsuarioArea areaSaude = new UsuarioArea();
+                        UsuarioArea areaFisica = new UsuarioArea();
+                        UsuarioArea areaFinanceira = new UsuarioArea();
+                        UsuarioArea areaEconomica = new UsuarioArea();
+                        UsuarioArea areaEducacao = new UsuarioArea();
+                        UsuarioArea areaSocial = new UsuarioArea();
+                        UsuarioArea areaEspiritual = new UsuarioArea();
+                        UsuarioArea areaComunidade = new UsuarioArea();
+                        UsuarioArea areaEcologica = new UsuarioArea();
+                        UsuarioArea areaLazer = new UsuarioArea();
+
+                        areaFamiliar.AreaID = familiar.ID;
+                        areaFamiliar.CodigoArea = familiar.Codigo;
+                        areaFamiliar.UsuarioID = tempUsuario;
+                        areaFamiliar.Nota = 0;
+
+                        areaProfissional.AreaID = profissional.ID;
+                        areaProfissional.CodigoArea = profissional.Codigo;
+                        areaProfissional.UsuarioID = tempUsuario;
+                        areaProfissional.Nota = 0;
+
+                        areaSaude.AreaID = saude.ID;
+                        areaSaude.CodigoArea = saude.Codigo;
+                        areaSaude.UsuarioID = tempUsuario;
+                        areaSaude.Nota = 0;
+
+                        areaFisica.AreaID = fisica.ID;
+                        areaFisica.CodigoArea = fisica.Codigo;
+                        areaFisica.UsuarioID = tempUsuario;
+                        areaFisica.Nota = 0;
+
+                        areaFinanceira.AreaID = financeira.ID;
+                        areaFinanceira.CodigoArea = financeira.Codigo;
+                        areaFinanceira.UsuarioID = tempUsuario;
+                        areaFinanceira.Nota = 0;
+
+                        areaEconomica.AreaID = economica.ID;
+                        areaEconomica.CodigoArea = economica.Codigo;
+                        areaEconomica.UsuarioID = tempUsuario;
+                        areaEconomica.Nota = 0;
+
+                        areaEducacao.AreaID = educacao.ID;
+                        areaEducacao.CodigoArea = educacao.Codigo;
+                        areaEducacao.UsuarioID = tempUsuario;
+                        areaEducacao.Nota = 0;
+
+                        areaSocial.AreaID = social.ID;
+                        areaSocial.CodigoArea = social.Codigo;
+                        areaSocial.UsuarioID = tempUsuario;
+                        areaSocial.Nota = 0;
+
+                        areaEspiritual.AreaID = espiritual.ID;
+                        areaEspiritual.CodigoArea = espiritual.Codigo;
+                        areaEspiritual.UsuarioID = tempUsuario;
+                        areaEspiritual.Nota = 0;
+
+                        areaComunidade.AreaID = comunidade.ID;
+                        areaComunidade.CodigoArea = comunidade.Codigo;
+                        areaComunidade.UsuarioID = tempUsuario;
+                        areaComunidade.Nota = 0;
+
+                        areaEcologica.AreaID = ecologica.ID;
+                        areaEcologica.CodigoArea = ecologica.Codigo;
+                        areaEcologica.UsuarioID = tempUsuario;
+                        areaEcologica.Nota = 0;
+
+                        areaLazer.AreaID = lazer.ID;
+                        areaLazer.CodigoArea = lazer.Codigo;
+                        areaLazer.UsuarioID = tempUsuario;
+                        areaLazer.Nota = 0;
+
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaFamiliar);
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaProfissional);
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaSaude);
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaFisica);
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaFinanceira);
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaEconomica);
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaEducacao);
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaSocial);
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaEspiritual);
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaComunidade);
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaEcologica);
+                        RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaLazer);
 
                         //Iniciando tela
                         var telaBemVindo = new Intent(this, typeof(BemVindo)).SetFlags(ActivityFlags.ReorderToFront);

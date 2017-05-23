@@ -37,16 +37,19 @@ namespace RodaDaVidaAndroid.Telas
             if (txtBemVindo != null)
             {
                 if (novoUsuario)
+                {
                     txtBemVindo.Text += " \nAgora você vai fazer a sua auto avaliação. \nPressione a tela para continuar.";
+                    detectarToque = true;
+                }
                 else
                 {
-                    IList<UsuarioArea> usuariosAreas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreas();
-                    if (usuariosAreas.Count == 0)
+                    IList<UsuarioArea> usuariosAreas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreasADefinir();
+                    if (usuariosAreas.Count == 12)
                     {
                         txtBemVindo.Text += " \nVocê precisa fazer a sua auto avaliação. \nPressione a tela para continuar.";
                         detectarToque = true;
                     }
-                    else if (usuariosAreas.Count < 12)
+                    else if (usuariosAreas.Count > 0)
                     {
                         txtBemVindo.Text += " \nVocê precisa terminar a sua auto avaliação. \nPressione a tela para continuar.";
                         detectarToque = true;
@@ -77,7 +80,6 @@ namespace RodaDaVidaAndroid.Telas
                 StartActivity(telaAutoAvaliacao);
                 Finish();
             }
-
             return true;
         }
     }
