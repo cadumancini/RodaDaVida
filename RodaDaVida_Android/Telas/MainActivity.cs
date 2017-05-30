@@ -88,18 +88,18 @@ namespace RodaDaVidaAndroid.Telas
                         lazer.Codigo = 12;
                         lazer.Descricao = "Lazer";
 
-                        familiar.ID = RodaDaVida.Current.dataBaseManager.saveArea(familiar);
-                        profissional.ID = RodaDaVida.Current.dataBaseManager.saveArea(profissional);
-                        saude.ID = RodaDaVida.Current.dataBaseManager.saveArea(saude);
-                        fisica.ID = RodaDaVida.Current.dataBaseManager.saveArea(fisica);
-                        financeira.ID = RodaDaVida.Current.dataBaseManager.saveArea(financeira);
-                        economica.ID = RodaDaVida.Current.dataBaseManager.saveArea(economica);
-                        educacao.ID = RodaDaVida.Current.dataBaseManager.saveArea(educacao);
-                        social.ID = RodaDaVida.Current.dataBaseManager.saveArea(social);
-                        espiritual.ID = RodaDaVida.Current.dataBaseManager.saveArea(espiritual);
-                        comunidade.ID = RodaDaVida.Current.dataBaseManager.saveArea(comunidade);
-                        ecologica.ID = RodaDaVida.Current.dataBaseManager.saveArea(ecologica);
-                        lazer.ID = RodaDaVida.Current.dataBaseManager.saveArea(lazer);
+                        RodaDaVida.Current.dataBaseManager.saveArea(familiar);
+                        RodaDaVida.Current.dataBaseManager.saveArea(profissional);
+                        RodaDaVida.Current.dataBaseManager.saveArea(saude);
+                        RodaDaVida.Current.dataBaseManager.saveArea(fisica);
+                        RodaDaVida.Current.dataBaseManager.saveArea(financeira);
+                        RodaDaVida.Current.dataBaseManager.saveArea(economica);
+                        RodaDaVida.Current.dataBaseManager.saveArea(educacao);
+                        RodaDaVida.Current.dataBaseManager.saveArea(social);
+                        RodaDaVida.Current.dataBaseManager.saveArea(espiritual);
+                        RodaDaVida.Current.dataBaseManager.saveArea(comunidade);
+                        RodaDaVida.Current.dataBaseManager.saveArea(ecologica);
+                        RodaDaVida.Current.dataBaseManager.saveArea(lazer);
 
                         UsuarioArea areaFamiliar = new UsuarioArea();
                         UsuarioArea areaProfissional = new UsuarioArea();

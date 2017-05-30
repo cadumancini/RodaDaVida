@@ -10,8 +10,9 @@ namespace RodaDaVidaShared.Tabelas
         }
 
         //SQLite attributes
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement, Unique]
         public int ID { get; set; }
+
         public string Nome { get; set; }
     }
 }
