@@ -118,57 +118,82 @@ namespace RodaDaVidaShared.Contracts
 
         public int SaveUsuario(Usuario usuario)
         {
+            int codigo = 0;
             lock (locker)
             {
                 if (usuario.ID != 0)
                 {
                     database.Update(usuario);
+                    database.Commit();
                     return usuario.ID;
                 }
                 else
-                    return database.Insert(usuario);
+                {
+                    codigo = database.Insert(usuario);
+                    database.Commit();
+                    return codigo;
+                }
+                    
             }
         }
 
         public int SaveArea(Area area)
         {
+            int codigo = 0;
             lock (locker)
             {
                 if (area.ID != 0)
                 {
                     database.Update(area);
+                    database.Commit();
                     return area.ID;
                 }
                 else
-                    return database.Insert(area);
+                {
+                    codigo = database.Insert(area);
+                    database.Commit();
+                    return codigo;
+                }
             }
         }
 
         public int SaveUsuarioArea(UsuarioArea usuarioArea)
         {
+            int codigo = 0;
             lock (locker)
             {
                 if (usuarioArea.ID != 0)
                 {
                     database.Update(usuarioArea);
+                    database.Commit();
                     return usuarioArea.ID;
                 }
                 else
-                    return database.Insert(usuarioArea);
+                {
+                    codigo = database.Insert(usuarioArea);
+                    database.Commit();
+                    return codigo;
+                }
             }
         }
 
         public int SaveTarefa(Tarefa tarefa)
         {
+            int codigo = 0;
             lock (locker)
             {
                 if (tarefa.ID != 0)
                 {
                     database.Update(tarefa);
+                    database.Commit();
                     return tarefa.ID;
                 }
                 else
-                    return database.Insert(tarefa);
+                {
+                    codigo = database.Insert(tarefa);
+                    database.Commit();
+                    return codigo;
+                }
             }
         }
 

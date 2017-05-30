@@ -18,6 +18,7 @@ namespace RodaDaVidaShared.Tabelas
 
         [Indexed]
         public int AreaID { get; set; }
+
         public int CodigoArea { get; set; }
         public double Nota { get; set; }
         public DateTime DataUltTarefa { get; set; }

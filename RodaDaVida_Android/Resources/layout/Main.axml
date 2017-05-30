@@ -54,9 +54,9 @@
         android:layout_marginRight="40dp" />
     <Button
         android:text="Continuar"
+        android:id="@+id/btnCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnCadastrar"
         android:gravity="center"
         android:textAllCaps="false"
         android:layout_gravity="center" />
