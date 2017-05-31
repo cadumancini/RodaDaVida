@@ -2128,6 +2128,15 @@ namespace RodaDaVidaAndroid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f0b009c
+			public const int NomeArea = 2131427484;
+			
+			// aapt resource value: 0x7f0b009d
+			public const int NotaArea = 2131427485;
+			
+			// aapt resource value: 0x7f0b009e
+			public const int NotasList = 2131427486;
+			
 			// aapt resource value: 0x7f0b0087
 			public const int action0 = 2131427463;
 			
@@ -2373,6 +2382,9 @@ namespace RodaDaVidaAndroid
 			
 			// aapt resource value: 0x7f0b0041
 			public const int list_item = 2131427393;
+			
+			// aapt resource value: 0x7f0b009b
+			public const int lstUsuarioArea = 2131427483;
 			
 			// aapt resource value: 0x7f0b008a
 			public const int media_actions = 2131427466;
@@ -2813,6 +2825,12 @@ namespace RodaDaVidaAndroid
 			
 			// aapt resource value: 0x7f03003b
 			public const int support_simple_spinner_dropdown_item = 2130903099;
+			
+			// aapt resource value: 0x7f03003c
+			public const int UsuarioAreaListItem = 2130903100;
+			
+			// aapt resource value: 0x7f03003d
+			public const int VisaoGeral = 2130903101;
 			
 			static Layout()
 			{
