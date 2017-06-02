@@ -16,7 +16,7 @@ namespace RodaDaVidaAndroid.Adapters
     class UsuarioAreaItemListAdapter : BaseAdapter<UsuarioArea>
     {
         Activity context = null;
-        IList<UsuarioArea> notas = new List<UsuarioArea>;
+        IList<UsuarioArea> notas = new List<UsuarioArea>();
 
         public UsuarioAreaItemListAdapter(Activity context, IList<UsuarioArea> notas) : base()
         {
@@ -41,7 +41,37 @@ namespace RodaDaVidaAndroid.Adapters
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            throw new NotImplementedException();
+            // Get our object for position
+            var item = notas[position];
+
+            // TODO: use this code to populate the row, and remove the above view
+            /*
+            var view = (convertView ??
+                context.LayoutInflater.Inflate(
+                    Android.Resource.Layout.SimpleListItemChecked,
+                    parent,
+                    false)) as CheckedTextView;*/
+            var view = convertView;
+            Area area = RodaDaVida.Current.dataBaseManager.GetArea(item.AreaID);
+
+            if (view == null)
+            {
+                view = context.LayoutInflater.Inflate(Resource.Layout.UsuarioAreaListItem, null);
+                var txtArea = view.FindViewById<TextView>(Resource.Id.NomeArea);
+                var txtNota = view.FindViewById<TextView>(Resource.Id.NotaArea);
+                txtArea.Text = area.Descricao;
+                txtNota.Text = item.Nota.ToString();
+            }
+            else
+            {
+                var txtArea = view.FindViewById<TextView>(Resource.Id.NomeArea);
+                var txtNota = view.FindViewById<TextView>(Resource.Id.NotaArea);
+                txtArea.Text = area.Descricao;
+                txtNota.Text = item.Nota.ToString();
+            }
+
+            //Finally return the view
+            return view;
         }
     }
 }

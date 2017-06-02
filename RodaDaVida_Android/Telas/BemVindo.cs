@@ -67,8 +67,8 @@ namespace RodaDaVidaAndroid.Telas
             //Esperando por <time> milisegundos
             await Task.Delay(time);
             //Iniciando tela
-            var telaAutoAvaliacao = new Intent(this, typeof(AutoAvaliacao)).SetFlags(ActivityFlags.ReorderToFront);
-            StartActivity(telaAutoAvaliacao);
+            var telaVisaoGeral = new Intent(this, typeof(VisaoGeral)).SetFlags(ActivityFlags.ReorderToFront);
+            StartActivity(telaVisaoGeral);
             Finish();
         }
 

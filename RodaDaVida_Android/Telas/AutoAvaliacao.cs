@@ -7,6 +7,7 @@ using Android.Widget;
 using RodaDaVidaShared.Tabelas;
 using System.Collections.Generic;
 using System;
+using System.Threading.Tasks;
 
 namespace RodaDaVidaAndroid.Telas
 {
@@ -61,9 +62,21 @@ namespace RodaDaVidaAndroid.Telas
                     picker.Visibility = ViewStates.Invisible;
                     btnSalvarNota.Visibility = ViewStates.Invisible;
 
+                    LoadActivity(2000);
+
                 }
             }
             return true;
+        }
+
+        public async void LoadActivity(int time)
+        {
+            //Esperando por <time> milisegundos
+            await Task.Delay(time);
+            //Iniciando tela
+            var telaVisaoGeral = new Intent(this, typeof(VisaoGeral)).SetFlags(ActivityFlags.ReorderToFront);
+            StartActivity(telaVisaoGeral);
+            Finish();
         }
     }
 }
