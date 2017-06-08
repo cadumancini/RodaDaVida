@@ -78,5 +78,12 @@ namespace RodaDaVidaAndroid.Telas
             StartActivity(telaVisaoGeral);
             Finish();
         }
+
+        private string GetMensagem(int codigoArea)
+        {
+            string mensagem = "";
+
+            return mensagem;
+        }
     }
 }
