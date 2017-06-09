@@ -8,6 +8,7 @@ using RodaDaVidaShared.Tabelas;
 using System.Collections.Generic;
 using System;
 using System.Threading.Tasks;
+using RodaDaVidaShared.Utils;
 
 namespace RodaDaVidaAndroid.Telas
 {
@@ -39,7 +40,7 @@ namespace RodaDaVidaAndroid.Telas
             totalAreas = areasADefinir.Count;
 
             Area area = RodaDaVida.Current.dataBaseManager.GetArea(areasADefinir[idAtual].AreaID);
-            pergunta.Text = "Defina a sua nota para a área " + area.Descricao + ":";
+            pergunta.Text = Utils.Current.GetMensagem(area);
 
         }
 
@@ -53,7 +54,7 @@ namespace RodaDaVidaAndroid.Telas
                 if(idAtual < totalAreas)
                 {
                     Area area = RodaDaVida.Current.dataBaseManager.GetArea(areasADefinir[idAtual].AreaID);
-                    pergunta.Text = "Defina a sua nota para a área " + area.Descricao + ":";
+                    pergunta.Text = Utils.Current.GetMensagem(area);
                     picker.Value = 1;
                 }
                 else
@@ -63,7 +64,6 @@ namespace RodaDaVidaAndroid.Telas
                     btnSalvarNota.Visibility = ViewStates.Invisible;
 
                     LoadActivity(2000);
-
                 }
             }
             return true;
@@ -77,13 +77,6 @@ namespace RodaDaVidaAndroid.Telas
             var telaVisaoGeral = new Intent(this, typeof(VisaoGeral)).SetFlags(ActivityFlags.ReorderToFront);
             StartActivity(telaVisaoGeral);
             Finish();
-        }
-
-        private string GetMensagem(int codigoArea)
-        {
-            string mensagem = "";
-
-            return mensagem;
         }
     }
 }
