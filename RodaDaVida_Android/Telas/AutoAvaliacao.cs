@@ -13,7 +13,7 @@ using RodaDaVidaShared.Utils;
 namespace RodaDaVidaAndroid.Telas
 {
     [Activity(Label = "AutoAvaliacao")]
-    public class AutoAvaliacao : Activity, View.IOnTouchListener
+    public class AutoAvaliacao : Activity
     {
         NumberPicker picker;
         TextView pergunta;
@@ -28,7 +28,6 @@ namespace RodaDaVidaAndroid.Telas
 
             pergunta = FindViewById<TextView>(Resource.Id.txtPergunta);
             btnSalvarNota = FindViewById<Button>(Resource.Id.btnSalvarNota);
-            btnSalvarNota.SetOnTouchListener(this);
             picker = FindViewById<NumberPicker>(Resource.Id.picker);
             picker.MinValue = 1;
             picker.MaxValue = 10;
@@ -42,31 +41,29 @@ namespace RodaDaVidaAndroid.Telas
             Area area = RodaDaVida.Current.dataBaseManager.GetArea(areasADefinir[idAtual].AreaID);
             pergunta.Text = Utils.Current.GetMensagem(area);
 
-        }
-
-        public bool OnTouch(View v, MotionEvent e)
-        {
-            if(e.Action == MotionEventActions.Up)
+            if(btnSalvarNota != null)
             {
-                areasADefinir[idAtual].Nota = picker.Value;
-                RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areasADefinir[idAtual]);
-                idAtual++;
-                if(idAtual < totalAreas)
-                {
-                    Area area = RodaDaVida.Current.dataBaseManager.GetArea(areasADefinir[idAtual].AreaID);
-                    pergunta.Text = Utils.Current.GetMensagem(area);
-                    picker.Value = 1;
-                }
-                else
-                {
-                    pergunta.Text = "Tudo pronto. Vamos começar!";
-                    picker.Visibility = ViewStates.Invisible;
-                    btnSalvarNota.Visibility = ViewStates.Invisible;
+                btnSalvarNota.Click += (sender, e) => {
+                    areasADefinir[idAtual].Nota = picker.Value;
+                    RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areasADefinir[idAtual]);
+                    idAtual++;
+                    if (idAtual < totalAreas)
+                    {
+                        Area areaTmp = RodaDaVida.Current.dataBaseManager.GetArea(areasADefinir[idAtual].AreaID);
+                        pergunta.Text = Utils.Current.GetMensagem(areaTmp);
+                        picker.Value = 1;
+                    }
+                    else
+                    {
+                        pergunta.Text = "Tudo pronto. Vamos começar!";
+                        picker.Visibility = ViewStates.Invisible;
+                        btnSalvarNota.Visibility = ViewStates.Invisible;
 
-                    LoadActivity(2000);
-                }
+                        LoadActivity(2000);
+                    }
+                };
             }
-            return true;
+
         }
 
         public async void LoadActivity(int time)

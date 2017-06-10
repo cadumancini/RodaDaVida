@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using RodaDaVidaAndroid.Adapters;
 using RodaDaVidaShared.Tabelas;
+using Android.Views;
+using Android.Content;
 
 namespace RodaDaVidaAndroid.Telas
 {
@@ -20,6 +16,7 @@ namespace RodaDaVidaAndroid.Telas
         UsuarioAreaItemListAdapter listAdapter;
         IList<UsuarioArea> notas;
         ListView notasListView;
+        Button btnNovaTarefa;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,6 +27,16 @@ namespace RodaDaVidaAndroid.Telas
 
             //Buscando os controles
             notasListView = FindViewById<ListView>(Resource.Id.NotasList);
+            btnNovaTarefa = FindViewById<Button>(Resource.Id.btnNovaTarefa);
+
+            if(btnNovaTarefa != null)
+            {
+                btnNovaTarefa.Click += (sender, e) =>
+                {
+                    var telaNovaTarefa = new Intent(this, typeof(NovaTarefa)).SetFlags(ActivityFlags.ReorderToFront);
+                    StartActivity(telaNovaTarefa);
+                };
+            }
 
         }
 

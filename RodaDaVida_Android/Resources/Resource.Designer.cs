@@ -2128,14 +2128,14 @@ namespace RodaDaVidaAndroid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b009c
-			public const int NomeArea = 2131427484;
+			// aapt resource value: 0x7f0b00a6
+			public const int NomeArea = 2131427494;
 			
-			// aapt resource value: 0x7f0b009d
-			public const int NotaArea = 2131427485;
+			// aapt resource value: 0x7f0b00a7
+			public const int NotaArea = 2131427495;
 			
-			// aapt resource value: 0x7f0b009e
-			public const int NotasList = 2131427486;
+			// aapt resource value: 0x7f0b00a8
+			public const int NotasList = 2131427496;
 			
 			// aapt resource value: 0x7f0b0087
 			public const int action0 = 2131427463;
@@ -2233,6 +2233,9 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b0082
 			public const int btnCadastrar = 2131427458;
 			
+			// aapt resource value: 0x7f0b00a9
+			public const int btnNovaTarefa = 2131427497;
+			
 			// aapt resource value: 0x7f0b006e
 			public const int btnSalvarNota = 2131427438;
 			
@@ -2320,6 +2323,21 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b0081
 			public const int editNome = 2131427457;
 			
+			// aapt resource value: 0x7f0b00a4
+			public const int editTarefaComo = 2131427492;
+			
+			// aapt resource value: 0x7f0b009e
+			public const int editTarefaDescricao = 2131427486;
+			
+			// aapt resource value: 0x7f0b009c
+			public const int editTarefaNome = 2131427484;
+			
+			// aapt resource value: 0x7f0b00a0
+			public const int editTarefaOnde = 2131427488;
+			
+			// aapt resource value: 0x7f0b00a2
+			public const int editTarefaQuando = 2131427490;
+			
 			// aapt resource value: 0x7f0b005f
 			public const int edit_query = 2131427423;
 			
@@ -2383,8 +2401,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b0041
 			public const int list_item = 2131427393;
 			
-			// aapt resource value: 0x7f0b009b
-			public const int lstUsuarioArea = 2131427483;
+			// aapt resource value: 0x7f0b00a5
+			public const int lstUsuarioArea = 2131427493;
 			
 			// aapt resource value: 0x7f0b008a
 			public const int media_actions = 2131427466;
@@ -2586,6 +2604,21 @@ namespace RodaDaVidaAndroid
 			
 			// aapt resource value: 0x7f0b0080
 			public const int txtSeuNome = 2131427456;
+			
+			// aapt resource value: 0x7f0b00a3
+			public const int txtTarefaComo = 2131427491;
+			
+			// aapt resource value: 0x7f0b009d
+			public const int txtTarefaDescricao = 2131427485;
+			
+			// aapt resource value: 0x7f0b009b
+			public const int txtTarefaNome = 2131427483;
+			
+			// aapt resource value: 0x7f0b009f
+			public const int txtTarefaOnde = 2131427487;
+			
+			// aapt resource value: 0x7f0b00a1
+			public const int txtTarefaQuando = 2131427489;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int unknown = 2131427348;
@@ -2827,10 +2860,13 @@ namespace RodaDaVidaAndroid
 			public const int support_simple_spinner_dropdown_item = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int UsuarioAreaListItem = 2130903100;
+			public const int Tarefa = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int VisaoGeral = 2130903101;
+			public const int UsuarioAreaListItem = 2130903101;
+			
+			// aapt resource value: 0x7f03003e
+			public const int VisaoGeral = 2130903102;
 			
 			static Layout()
 			{

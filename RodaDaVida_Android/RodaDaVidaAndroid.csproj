@@ -185,6 +185,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Telas\BemVindo.cs" />
+    <Compile Include="Telas\NovaTarefa.cs" />
     <Compile Include="Telas\VisaoGeral.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -206,6 +207,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\UsuarioAreaListItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Tarefa.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
