@@ -75,9 +75,9 @@ namespace RodaDaVidaShared.Contracts
             return new List<UsuarioArea>(usuarioAreaRepository.GetUsuariosAreasADefinir());
         }
 
-        public IList<UsuarioArea> GetUsuariosAreasByCodigo(int codigo)
+        public UsuarioArea GetUsuarioAreaByCodigo(int codigo)
         {
-            return new List<UsuarioArea>(usuarioAreaRepository.GetUsuariosAreasByCodigo(codigo));
+            return usuarioAreaRepository.GetUsuarioAreaByCodigo(codigo);
         }
 
         public int saveUsuarioArea(UsuarioArea usuarioArea)

@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">RodaDaVidaAndroid</string>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">RodaDaVidaAndroid</string>
+  <string name="areas_prompt">Selecione uma área</string>
+  <string-array name="areas_array">
+    <item>Familiar</item>
+    <item>Profissional</item>
+    <item>Saúde</item>
+    <item>Física</item>
+    <item>Financeira</item>
+    <item>Econômica</item>
+    <item>Educação</item>
+    <item>Social</item>
+    <item>Espiritual</item>
+    <item>Comunidade</item>
+    <item>Ecológica</item>
+    <item>Lazer</item>
+  </string-array>
 </resources>

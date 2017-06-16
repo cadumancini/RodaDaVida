@@ -71,6 +71,22 @@ namespace RodaDaVidaAndroid
 			}
 		}
 		
+		public partial class Array
+		{
+			
+			// aapt resource value: 0x7f0c0000
+			public const int areas_array = 2131492864;
+			
+			static Array()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Array()
+			{
+			}
+		}
+		
 		public partial class Attribute
 		{
 			
@@ -2128,14 +2144,14 @@ namespace RodaDaVidaAndroid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b00a6
-			public const int NomeArea = 2131427494;
+			// aapt resource value: 0x7f0b00aa
+			public const int NomeArea = 2131427498;
 			
-			// aapt resource value: 0x7f0b00a7
-			public const int NotaArea = 2131427495;
+			// aapt resource value: 0x7f0b00ab
+			public const int NotaArea = 2131427499;
 			
-			// aapt resource value: 0x7f0b00a8
-			public const int NotasList = 2131427496;
+			// aapt resource value: 0x7f0b00ac
+			public const int NotasList = 2131427500;
 			
 			// aapt resource value: 0x7f0b0087
 			public const int action0 = 2131427463;
@@ -2233,11 +2249,17 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b0082
 			public const int btnCadastrar = 2131427458;
 			
-			// aapt resource value: 0x7f0b00a9
-			public const int btnNovaTarefa = 2131427497;
+			// aapt resource value: 0x7f0b00ad
+			public const int btnNovaTarefa = 2131427501;
 			
 			// aapt resource value: 0x7f0b006e
 			public const int btnSalvarNota = 2131427438;
+			
+			// aapt resource value: 0x7f0b00a4
+			public const int btnSelecionarData = 2131427492;
+			
+			// aapt resource value: 0x7f0b00a8
+			public const int btnTarefaSalvar = 2131427496;
 			
 			// aapt resource value: 0x7f0b0016
 			public const int button = 2131427350;
@@ -2323,20 +2345,20 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b0081
 			public const int editNome = 2131427457;
 			
-			// aapt resource value: 0x7f0b00a4
-			public const int editTarefaComo = 2131427492;
-			
-			// aapt resource value: 0x7f0b009e
-			public const int editTarefaDescricao = 2131427486;
-			
-			// aapt resource value: 0x7f0b009c
-			public const int editTarefaNome = 2131427484;
+			// aapt resource value: 0x7f0b00a7
+			public const int editTarefaComo = 2131427495;
 			
 			// aapt resource value: 0x7f0b00a0
-			public const int editTarefaOnde = 2131427488;
+			public const int editTarefaDescricao = 2131427488;
+			
+			// aapt resource value: 0x7f0b009e
+			public const int editTarefaNome = 2131427486;
 			
 			// aapt resource value: 0x7f0b00a2
-			public const int editTarefaQuando = 2131427490;
+			public const int editTarefaOnde = 2131427490;
+			
+			// aapt resource value: 0x7f0b00a5
+			public const int editTarefaQuando = 2131427493;
 			
 			// aapt resource value: 0x7f0b005f
 			public const int edit_query = 2131427423;
@@ -2401,8 +2423,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b0041
 			public const int list_item = 2131427393;
 			
-			// aapt resource value: 0x7f0b00a5
-			public const int lstUsuarioArea = 2131427493;
+			// aapt resource value: 0x7f0b00a9
+			public const int lstUsuarioArea = 2131427497;
 			
 			// aapt resource value: 0x7f0b008a
 			public const int media_actions = 2131427466;
@@ -2536,6 +2558,9 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b0045
 			public const int spacer = 2131427397;
 			
+			// aapt resource value: 0x7f0b009c
+			public const int spinnerAreas = 2131427484;
+			
 			// aapt resource value: 0x7f0b0007
 			public const int split_action_bar = 2131427335;
 			
@@ -2605,20 +2630,23 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b0080
 			public const int txtSeuNome = 2131427456;
 			
-			// aapt resource value: 0x7f0b00a3
-			public const int txtTarefaComo = 2131427491;
-			
-			// aapt resource value: 0x7f0b009d
-			public const int txtTarefaDescricao = 2131427485;
-			
 			// aapt resource value: 0x7f0b009b
-			public const int txtTarefaNome = 2131427483;
+			public const int txtTarefaArea = 2131427483;
+			
+			// aapt resource value: 0x7f0b00a6
+			public const int txtTarefaComo = 2131427494;
 			
 			// aapt resource value: 0x7f0b009f
-			public const int txtTarefaOnde = 2131427487;
+			public const int txtTarefaDescricao = 2131427487;
+			
+			// aapt resource value: 0x7f0b009d
+			public const int txtTarefaNome = 2131427485;
 			
 			// aapt resource value: 0x7f0b00a1
-			public const int txtTarefaQuando = 2131427489;
+			public const int txtTarefaOnde = 2131427489;
+			
+			// aapt resource value: 0x7f0b00a3
+			public const int txtTarefaQuando = 2131427491;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int unknown = 2131427348;
@@ -2979,6 +3007,9 @@ namespace RodaDaVidaAndroid
 			
 			// aapt resource value: 0x7f06003b
 			public const int abc_toolbar_collapse_description = 2131099707;
+			
+			// aapt resource value: 0x7f06004c
+			public const int areas_prompt = 2131099724;
 			
 			// aapt resource value: 0x7f060011
 			public const int com_facebook_device_auth_instructions = 2131099665;

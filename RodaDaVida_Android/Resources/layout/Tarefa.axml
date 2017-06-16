@@ -4,6 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:text="Área:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:id="@+id/txtTarefaArea" />
+    <Spinner
+        android:id="@+id/spinnerAreas"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/areas_prompt" />
+    <TextView
         android:text="Nome curto:"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
@@ -46,11 +58,24 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:id="@+id/txtTarefaQuando" />
-    <EditText
-        android:inputType="date"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTarefaQuando" />
+        android:layout_height="wrap_content">
+        <Button
+            android:text="Selecionar uma Data"
+            android:id="@+id/btnSelecionarData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAllCaps="false"
+            android:layout_gravity="left" />
+        <EditText
+            android:inputType="date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/editTarefaQuando" />
+    </LinearLayout>
     <TextView
         android:text="Como:"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -65,7 +90,7 @@
         android:id="@+id/editTarefaComo" />
     <Button
         android:text="Salvar"
-        android:id="@+id/btnSalvarNota"
+        android:id="@+id/btnTarefaSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
