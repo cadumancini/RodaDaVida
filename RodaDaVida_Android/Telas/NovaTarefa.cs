@@ -53,15 +53,55 @@ namespace RodaDaVidaAndroid.Telas
             {
                 btnSalvar.Click += (sender, e) =>
                 {
-                    Tarefa tarefa = new Tarefa();
-                    UsuarioArea usuarioArea = RodaDaVida.Current.dataBaseManager.GetUsuarioAreaByCodigo(areaAtual.ID);
-                    tarefa.NomeCurto = editTarefaNomeCurto.Text;
-                    tarefa.Descricao = editTarefaDescricao.Text;
-                    tarefa.Onde = editTarefaOnde.Text;
-                    tarefa.Quando = dataTarefa;
-                    tarefa.Como = editTarefaComo.Text;
-                    tarefa.UsuarioAreaID = usuarioArea.ID;
-                    RodaDaVida.Current.dataBaseManager.saveTarefa(tarefa);
+                    bool salvar = true;
+                    if(editTarefaNomeCurto.Text.Equals(""))
+                    {
+                        Toast.MakeText(this, "O nome curto da tarefa deve ser preenchido!", ToastLength.Short).Show();
+                        editTarefaNomeCurto.RequestFocus();
+                        salvar = false;
+                    }
+                    else if (editTarefaDescricao.Text.Equals(""))
+                    {
+                        Toast.MakeText(this, "A descrição da tarefa deve ser preenchida!", ToastLength.Short).Show();
+                        editTarefaDescricao.RequestFocus();
+                        salvar = false;
+                    }
+                    else if (editTarefaOnde.Text.Equals(""))
+                    {
+                        Toast.MakeText(this, "O local da tarefa deve ser preenchido!", ToastLength.Short).Show();
+                        editTarefaOnde.RequestFocus();
+                        salvar = false;
+                    }
+                    else if (editTarefaQuando.Text.Equals(""))
+                    {
+                        Toast.MakeText(this, "A data da tarefa deve ser preenchida!", ToastLength.Short).Show();
+                        editTarefaQuando.RequestFocus();
+                        salvar = false;
+                    }
+                    else if (editTarefaComo.Text.Equals(""))
+                    {
+                        Toast.MakeText(this, "Como a tarefa vai ser realizada deve ser preenchido!", ToastLength.Short).Show();
+                        editTarefaComo.RequestFocus();
+                        salvar = false;
+                    }
+
+                    if (salvar)
+                    {
+                        Tarefa tarefa = new Tarefa();
+                        UsuarioArea usuarioArea = RodaDaVida.Current.dataBaseManager.GetUsuarioAreaByCodigo(areaAtual.ID);
+                        tarefa.NomeCurto = editTarefaNomeCurto.Text;
+                        tarefa.Descricao = editTarefaDescricao.Text;
+                        tarefa.Onde = editTarefaOnde.Text;
+                        tarefa.Quando = dataTarefa;
+                        tarefa.Como = editTarefaComo.Text;
+                        tarefa.UsuarioAreaID = usuarioArea.ID;
+                        RodaDaVida.Current.dataBaseManager.saveTarefa(tarefa);
+
+                        string texto = "Tarefa salva com sucesso!";
+                        Toast.MakeText(this, texto, ToastLength.Short).Show();
+
+                        OnBackPressed();
+                    }
                 };
             }
 

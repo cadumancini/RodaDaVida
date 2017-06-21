@@ -74,7 +74,8 @@
             android:inputType="date"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/editTarefaQuando" />
+            android:id="@+id/editTarefaQuando"
+            android:enabled="false" />
     </LinearLayout>
     <TextView
         android:text="Como:"
