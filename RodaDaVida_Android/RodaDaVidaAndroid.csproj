@@ -178,6 +178,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\ProxTarefasItemListAdapter.cs" />
     <Compile Include="Adapters\UsuarioAreaItemListAdapter.cs" />
     <Compile Include="RodaDaVida.cs" />
     <Compile Include="Telas\AutoAvaliacao.cs" />
@@ -210,6 +211,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Tarefa.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ProximasTarefasListItem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

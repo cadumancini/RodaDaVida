@@ -76,7 +76,10 @@ namespace RodaDaVidaShared.Contracts
         {
             lock (locker)
             {
-                return (from i in database.Table<Tarefa>() select i).ToList();
+                return database.Query<Tarefa>("SELECT * " +
+                                                "FROM TAREFA " +
+                                               "WHERE CONCLUIDA = 0 " +
+                                               "ORDER BY QUANDO, NOMECURTO");
             }
         }
 

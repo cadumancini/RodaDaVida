@@ -5,7 +5,6 @@ using Android.OS;
 using Android.Widget;
 using RodaDaVidaAndroid.Adapters;
 using RodaDaVidaShared.Tabelas;
-using Android.Views;
 using Android.Content;
 
 namespace RodaDaVidaAndroid.Telas
@@ -13,9 +12,13 @@ namespace RodaDaVidaAndroid.Telas
     [Activity(Label = "Visao_Geral")]
     class VisaoGeral : Activity
     {
-        UsuarioAreaItemListAdapter listAdapter;
+        UsuarioAreaItemListAdapter notasListAdapter;
+        ProxTarefasItemListAdapter tarefasListAdapter;
+
         IList<UsuarioArea> notas;
+        IList<Tarefa> tarefas;
         ListView notasListView;
+        ListView tarefasListView;
         Button btnNovaTarefa;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -27,6 +30,7 @@ namespace RodaDaVidaAndroid.Telas
 
             //Buscando os controles
             notasListView = FindViewById<ListView>(Resource.Id.NotasList);
+            tarefasListView = FindViewById<ListView>(Resource.Id.ProximasTarefasList);
             btnNovaTarefa = FindViewById<Button>(Resource.Id.btnNovaTarefa);
 
             if(btnNovaTarefa != null)
@@ -45,12 +49,15 @@ namespace RodaDaVidaAndroid.Telas
             base.OnResume();
 
             notas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreas();
+            tarefas = RodaDaVida.Current.dataBaseManager.GetTarefas();
 
-            //Criando o Adapter
-            listAdapter = new UsuarioAreaItemListAdapter(this, notas);
+            //Criando os Adapters
+            notasListAdapter = new UsuarioAreaItemListAdapter(this, notas);
+            tarefasListAdapter = new ProxTarefasItemListAdapter(this, tarefas);
 
-            //Atribuindo o Adapter para a ListVew
-            notasListView.Adapter = listAdapter;
+            //Atribuindo os Adapters para as ListVews
+            notasListView.Adapter = notasListAdapter;
+            tarefasListView.Adapter = tarefasListAdapter;
         }
     }
 }

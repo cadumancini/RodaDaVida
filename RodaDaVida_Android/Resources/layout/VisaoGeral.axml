@@ -15,4 +15,8 @@
         android:gravity="center"
         android:textAllCaps="false"
         android:layout_gravity="center" />
+  <ListView
+        android:id="@+id/ProximasTarefasList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
