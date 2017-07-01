@@ -15,6 +15,13 @@
         android:gravity="center"
         android:textAllCaps="false"
         android:layout_gravity="center" />
+  <TextView
+        android:text="Próximas Tarefas:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:id="@+id/txtProximasTarefas" />
   <ListView
         android:id="@+id/ProximasTarefasList"
         android:layout_width="fill_parent"

@@ -89,6 +89,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTarefaComo" />
+    <CheckBox
+        android:text="Concluída"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chckTarefaConcluida" />
+    <Button
+        android:text="Excluir Tarefa"
+        android:id="@+id/btnTarefaExcluir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:layout_gravity="center" />
     <Button
         android:text="Salvar"
         android:id="@+id/btnTarefaSalvar"

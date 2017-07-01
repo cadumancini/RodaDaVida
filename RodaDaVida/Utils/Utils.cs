@@ -5,6 +5,7 @@ namespace RodaDaVidaShared.Utils
     public class Utils
     {
         public static Utils current;
+        public double NotasPorTarefa = 0.5;
 
         private Utils()
         {

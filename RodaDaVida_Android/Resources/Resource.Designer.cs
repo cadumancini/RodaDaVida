@@ -2144,14 +2144,14 @@ namespace RodaDaVidaAndroid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b00ae
-			public const int NomeArea = 2131427502;
-			
-			// aapt resource value: 0x7f0b00af
-			public const int NotaArea = 2131427503;
-			
 			// aapt resource value: 0x7f0b00b0
-			public const int NotasList = 2131427504;
+			public const int NomeArea = 2131427504;
+			
+			// aapt resource value: 0x7f0b00b1
+			public const int NotaArea = 2131427505;
+			
+			// aapt resource value: 0x7f0b00b2
+			public const int NotasList = 2131427506;
 			
 			// aapt resource value: 0x7f0b009c
 			public const int ProxTarNomeArea = 2131427484;
@@ -2162,8 +2162,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b009e
 			public const int ProxTarQuando = 2131427486;
 			
-			// aapt resource value: 0x7f0b00b2
-			public const int ProximasTarefasList = 2131427506;
+			// aapt resource value: 0x7f0b00b5
+			public const int ProximasTarefasList = 2131427509;
 			
 			// aapt resource value: 0x7f0b0087
 			public const int action0 = 2131427463;
@@ -2261,8 +2261,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b0082
 			public const int btnCadastrar = 2131427458;
 			
-			// aapt resource value: 0x7f0b00b1
-			public const int btnNovaTarefa = 2131427505;
+			// aapt resource value: 0x7f0b00b3
+			public const int btnNovaTarefa = 2131427507;
 			
 			// aapt resource value: 0x7f0b006e
 			public const int btnSalvarNota = 2131427438;
@@ -2270,8 +2270,11 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b00a8
 			public const int btnSelecionarData = 2131427496;
 			
-			// aapt resource value: 0x7f0b00ac
-			public const int btnTarefaSalvar = 2131427500;
+			// aapt resource value: 0x7f0b00ad
+			public const int btnTarefaExcluir = 2131427501;
+			
+			// aapt resource value: 0x7f0b00ae
+			public const int btnTarefaSalvar = 2131427502;
 			
 			// aapt resource value: 0x7f0b0016
 			public const int button = 2131427350;
@@ -2287,6 +2290,9 @@ namespace RodaDaVidaAndroid
 			
 			// aapt resource value: 0x7f0b001a
 			public const int center = 2131427354;
+			
+			// aapt resource value: 0x7f0b00ac
+			public const int chckTarefaConcluida = 2131427500;
 			
 			// aapt resource value: 0x7f0b0054
 			public const int checkbox = 2131427412;
@@ -2438,8 +2444,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b009b
 			public const int lstProximasTarefas = 2131427483;
 			
-			// aapt resource value: 0x7f0b00ad
-			public const int lstUsuarioArea = 2131427501;
+			// aapt resource value: 0x7f0b00af
+			public const int lstUsuarioArea = 2131427503;
 			
 			// aapt resource value: 0x7f0b008a
 			public const int media_actions = 2131427466;
@@ -2641,6 +2647,9 @@ namespace RodaDaVidaAndroid
 			
 			// aapt resource value: 0x7f0b006c
 			public const int txtPergunta = 2131427436;
+			
+			// aapt resource value: 0x7f0b00b4
+			public const int txtProximasTarefas = 2131427508;
 			
 			// aapt resource value: 0x7f0b0080
 			public const int txtSeuNome = 2131427456;

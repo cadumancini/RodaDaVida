@@ -5,22 +5,21 @@ using Android.OS;
 using Android.Widget;
 using Android.Util;
 using RodaDaVidaShared.Tabelas;
+using Android.Views;
+using RodaDaVidaShared.Utils;
 
 namespace RodaDaVidaAndroid.Telas
 {
     [Activity(Label = "NovaTarefa")]
     public class NovaTarefa : Activity
     {
-        Button btnSelecionarData;
-        Button btnSalvar;
-        EditText editTarefaNomeCurto;
-        EditText editTarefaDescricao;
-        EditText editTarefaOnde;
-        EditText editTarefaQuando;
-        EditText editTarefaComo;
+        Button btnSelecionarData, btnSalvar, btnExcluir;
+        EditText editTarefaNomeCurto, editTarefaDescricao, editTarefaOnde, editTarefaQuando, editTarefaComo;
         DateTime dataTarefa;
         Spinner spinnerArea;
+        CheckBox chckTarefaConcluida;
         Area areaAtual;
+        Tarefa tarefa = new Tarefa();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -37,7 +36,9 @@ namespace RodaDaVidaAndroid.Telas
             editTarefaQuando = FindViewById<EditText>(Resource.Id.editTarefaQuando);
             editTarefaComo = FindViewById<EditText>(Resource.Id.editTarefaComo);
             spinnerArea = FindViewById<Spinner>(Resource.Id.spinnerAreas);
+            chckTarefaConcluida = FindViewById<CheckBox>(Resource.Id.chckTarefaConcluida);
             btnSalvar = FindViewById<Button>(Resource.Id.btnTarefaSalvar);
+            btnExcluir = FindViewById<Button>(Resource.Id.btnTarefaExcluir);
 
             spinnerArea.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
             var adapter = ArrayAdapter.CreateFromResource(
@@ -46,9 +47,33 @@ namespace RodaDaVidaAndroid.Telas
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinnerArea.Adapter = adapter;
 
+            //Preenchendo valores, caso vier de um clique numa tarefa, na lista da tela de Visao Geral
+            int tarefaID = Intent.GetIntExtra("TarefaID", 0);
+            if(tarefaID > 0)
+            {
+                tarefa = RodaDaVida.Current.dataBaseManager.GetTarefa(tarefaID);
+                editTarefaNomeCurto.Text = tarefa.NomeCurto;
+                editTarefaDescricao.Text = tarefa.Descricao;
+                editTarefaOnde.Text = tarefa.Onde;
+                editTarefaQuando.Text = tarefa.Quando.ToLongDateString();
+                dataTarefa = tarefa.Quando;
+                editTarefaComo.Text = tarefa.Como;
+                UsuarioArea usuarioArea = RodaDaVida.Current.dataBaseManager.GetUsuarioArea(tarefa.UsuarioAreaID);
+                spinnerArea.SetSelection(usuarioArea.CodigoArea - 1);
+                chckTarefaConcluida.Visibility = ViewStates.Visible;
+                btnExcluir.Visibility = ViewStates.Visible;
+            }
+            else
+            {
+                chckTarefaConcluida.Visibility = ViewStates.Invisible;
+                btnExcluir.Visibility = ViewStates.Invisible;
+            }
+
+            //Selecionando data
             if (btnSelecionarData != null)
                 btnSelecionarData.Click += DateSelect_OnClick;
 
+            //Pegando clique em Salvar
             if(btnSalvar != null)
             {
                 btnSalvar.Click += (sender, e) =>
@@ -87,17 +112,35 @@ namespace RodaDaVidaAndroid.Telas
 
                     if (salvar)
                     {
-                        Tarefa tarefa = new Tarefa();
+                        string texto = "Tarefa salva com sucesso!";
+
                         UsuarioArea usuarioArea = RodaDaVida.Current.dataBaseManager.GetUsuarioAreaByCodigo(areaAtual.ID);
+                        Area area = RodaDaVida.Current.dataBaseManager.GetArea(usuarioArea.AreaID);
                         tarefa.NomeCurto = editTarefaNomeCurto.Text;
                         tarefa.Descricao = editTarefaDescricao.Text;
                         tarefa.Onde = editTarefaOnde.Text;
                         tarefa.Quando = dataTarefa;
                         tarefa.Como = editTarefaComo.Text;
                         tarefa.UsuarioAreaID = usuarioArea.ID;
+                        if (tarefa.ID > 0)
+                            tarefa.Concluida = chckTarefaConcluida.Checked;
+                        
+                        if (tarefa.Concluida)
+                        {
+                            tarefa.PontosGanhos = Utils.Current.NotasPorTarefa;
+                            string nota = Utils.Current.NotasPorTarefa.ToString();
+                            nota = nota.Replace('.', ',');
+                            if ((usuarioArea.DataUltTarefa == null) || (tarefa.Quando > usuarioArea.DataUltTarefa))
+                                usuarioArea.DataUltTarefa = tarefa.Quando;
+                            usuarioArea.Nota += tarefa.PontosGanhos;
+                            if (usuarioArea.Nota > 10)
+                                usuarioArea.Nota = 10;
+                            RodaDaVida.Current.dataBaseManager.saveUsuarioArea(usuarioArea);
+                            texto = "Parabéns por concluir a tarefa! Você ganhou " + nota + 
+                                        " ponto na área: " + area.Descricao + ". Continue em frente!";
+                        }
                         RodaDaVida.Current.dataBaseManager.saveTarefa(tarefa);
-
-                        string texto = "Tarefa salva com sucesso!";
+                        
                         Toast.MakeText(this, texto, ToastLength.Short).Show();
 
                         OnBackPressed();
@@ -105,6 +148,31 @@ namespace RodaDaVidaAndroid.Telas
                 };
             }
 
+            //Pegando clique em Excluir
+            if(btnExcluir != null)
+            {
+                btnExcluir.Click += (sender, e) =>
+                {
+                    var builder = new AlertDialog.Builder(this);
+                    builder.SetMessage("Tem certeza que deseja excluir a tarefa?");
+                    builder.SetPositiveButton("Sim", (s, ev) => 
+                        {
+                            ExcluirTarefaAtual();
+                            string texto = "Tarefa excluída com sucesso!";
+                            Toast.MakeText(this, texto, ToastLength.Short).Show();
+
+                            OnBackPressed();
+                        });
+                    builder.SetNegativeButton("Não", (s, ev) => { return; });
+                    builder.Create().Show();
+                };
+            }
+
+        }
+
+        private void ExcluirTarefaAtual()
+        {
+            RodaDaVida.Current.dataBaseManager.deleteTarefa(tarefa.ID);
         }
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)

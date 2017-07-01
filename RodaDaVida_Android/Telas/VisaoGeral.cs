@@ -33,12 +33,24 @@ namespace RodaDaVidaAndroid.Telas
             tarefasListView = FindViewById<ListView>(Resource.Id.ProximasTarefasList);
             btnNovaTarefa = FindViewById<Button>(Resource.Id.btnNovaTarefa);
 
+            //Pegando clique em nova tarefa
             if(btnNovaTarefa != null)
             {
                 btnNovaTarefa.Click += (sender, e) =>
                 {
                     var telaNovaTarefa = new Intent(this, typeof(NovaTarefa)).SetFlags(ActivityFlags.ReorderToFront);
                     StartActivity(telaNovaTarefa);
+                };
+            }
+
+            //Pegando clique em item da lista de tarefas
+            if (tarefasListView != null)
+            {
+                tarefasListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
+                {
+                    var tarefaDetalhe = new Intent(this, typeof(NovaTarefa));
+                    tarefaDetalhe.PutExtra("TarefaID", tarefas[e.Position].ID);
+                    StartActivity(tarefaDetalhe);
                 };
             }
 
@@ -50,6 +62,21 @@ namespace RodaDaVidaAndroid.Telas
 
             notas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreas();
             tarefas = RodaDaVida.Current.dataBaseManager.GetTarefas();
+
+            //Deixando lista de tarefas apenas com as 10 primeiras da lista
+            if(tarefas.Count > 10)
+            {
+                IList<Tarefa> tarefasTmp = new List<Tarefa>();
+                int idx = 0;
+                foreach(Tarefa tmp in tarefas)
+                {
+                    idx++;
+                    tarefasTmp.Add(tmp);
+                    if (idx == 10)
+                        break;
+                }
+                tarefas = tarefasTmp;
+            }
 
             //Criando os Adapters
             notasListAdapter = new UsuarioAreaItemListAdapter(this, notas);
