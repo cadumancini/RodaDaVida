@@ -22,5 +22,6 @@ namespace RodaDaVidaShared.Tabelas
         public int CodigoArea { get; set; }
         public double Nota { get; set; }
         public DateTime DataUltTarefa { get; set; }
+        public DateTime DataUltReducao { get; set; }
     }
 }

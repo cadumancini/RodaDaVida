@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Views.InputMethods;
 using Android.Widget;
 using RodaDaVidaShared.Tabelas;
+using System;
 using System.Collections.Generic;
 
 namespace RodaDaVidaAndroid.Telas
@@ -117,50 +118,62 @@ namespace RodaDaVidaAndroid.Telas
                         areaFamiliar.AreaID = familiar.ID;
                         areaFamiliar.UsuarioID = usuario.ID;
                         areaFamiliar.Nota = 0;
+                        areaFamiliar.DataUltReducao = DateTime.Now;
 
                         areaProfissional.AreaID = profissional.ID;
                         areaProfissional.UsuarioID = usuario.ID;
                         areaProfissional.Nota = 0;
+                        areaProfissional.DataUltReducao = DateTime.Now;
 
                         areaSaude.AreaID = saude.ID;
                         areaSaude.UsuarioID = usuario.ID;
                         areaSaude.Nota = 0;
+                        areaSaude.DataUltReducao = DateTime.Now;
 
                         areaFisica.AreaID = fisica.ID;
                         areaFisica.UsuarioID = usuario.ID;
                         areaFisica.Nota = 0;
+                        areaFisica.DataUltReducao = DateTime.Now;
 
                         areaFinanceira.AreaID = financeira.ID;
                         areaFinanceira.UsuarioID = usuario.ID;
                         areaFinanceira.Nota = 0;
+                        areaFinanceira.DataUltReducao = DateTime.Now;
 
                         areaEconomica.AreaID = economica.ID;
                         areaEconomica.UsuarioID = usuario.ID;
                         areaEconomica.Nota = 0;
+                        areaEconomica.DataUltReducao = DateTime.Now;
 
                         areaEducacao.AreaID = educacao.ID;
                         areaEducacao.UsuarioID = usuario.ID;
                         areaEducacao.Nota = 0;
+                        areaEducacao.DataUltReducao = DateTime.Now;
 
                         areaSocial.AreaID = social.ID;
                         areaSocial.UsuarioID = usuario.ID;
                         areaSocial.Nota = 0;
+                        areaSocial.DataUltReducao = DateTime.Now;
 
                         areaEspiritual.AreaID = espiritual.ID;
                         areaEspiritual.UsuarioID = usuario.ID;
                         areaEspiritual.Nota = 0;
+                        areaEspiritual.DataUltReducao = DateTime.Now;
 
                         areaComunidade.AreaID = comunidade.ID;
                         areaComunidade.UsuarioID = usuario.ID;
                         areaComunidade.Nota = 0;
+                        areaComunidade.DataUltReducao = DateTime.Now;
 
                         areaEcologica.AreaID = ecologica.ID;
                         areaEcologica.UsuarioID = usuario.ID;
                         areaEcologica.Nota = 0;
+                        areaEcologica.DataUltReducao = DateTime.Now;
 
                         areaLazer.AreaID = lazer.ID;
                         areaLazer.UsuarioID = usuario.ID;
                         areaLazer.Nota = 0;
+                        areaLazer.DataUltReducao = DateTime.Now;
 
                         RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaFamiliar);
                         RodaDaVida.Current.dataBaseManager.saveUsuarioArea(areaProfissional);
