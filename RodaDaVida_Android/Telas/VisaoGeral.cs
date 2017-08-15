@@ -89,11 +89,12 @@ namespace RodaDaVidaAndroid.Telas
 
             //Verificando se é hora de abaixar pontos de alguma área:
             DateTime hoje = DateTime.Now;
+            DateTime dataNula = new DateTime(1, 1, 1);
             var difDias = 0;
             IList<UsuarioArea> areasDescontar = new List<UsuarioArea>();
             foreach(UsuarioArea area in notas)
             {
-                if (area.DataUltTarefa != null) // já fez alguma tarefa?
+                if (area.DataUltTarefa != dataNula) // já fez alguma tarefa?
                 {
                     difDias = hoje.Subtract(area.DataUltTarefa).Days;
                     if (difDias > 15) // se a última tarefa feita foi há mais de 15 dias

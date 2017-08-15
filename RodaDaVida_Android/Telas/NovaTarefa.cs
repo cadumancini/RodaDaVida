@@ -7,6 +7,10 @@ using Android.Util;
 using RodaDaVidaShared.Tabelas;
 using Android.Views;
 using RodaDaVidaShared.Utils;
+using Android.Content;
+using Android.Provider;
+using Java.Util;
+using Android.Database;
 
 namespace RodaDaVidaAndroid.Telas
 {
@@ -49,7 +53,7 @@ namespace RodaDaVidaAndroid.Telas
 
             //Preenchendo valores, caso vier de um clique numa tarefa, na lista da tela de Visao Geral
             int tarefaID = Intent.GetIntExtra("TarefaID", 0);
-            if(tarefaID > 0)
+            if (tarefaID > 0)
             {
                 tarefa = RodaDaVida.Current.dataBaseManager.GetTarefa(tarefaID);
                 editTarefaNomeCurto.Text = tarefa.NomeCurto;
@@ -74,12 +78,12 @@ namespace RodaDaVidaAndroid.Telas
                 btnSelecionarData.Click += DateSelect_OnClick;
 
             //Pegando clique em Salvar
-            if(btnSalvar != null)
+            if (btnSalvar != null)
             {
                 btnSalvar.Click += (sender, e) =>
                 {
                     bool salvar = true;
-                    if(editTarefaNomeCurto.Text.Equals(""))
+                    if (editTarefaNomeCurto.Text.Equals(""))
                     {
                         Toast.MakeText(this, "O nome curto da tarefa deve ser preenchido!", ToastLength.Short).Show();
                         editTarefaNomeCurto.RequestFocus();
@@ -124,7 +128,7 @@ namespace RodaDaVidaAndroid.Telas
                         tarefa.UsuarioAreaID = usuarioArea.ID;
                         if (tarefa.ID > 0)
                             tarefa.Concluida = chckTarefaConcluida.Checked;
-                        
+
                         if (tarefa.Concluida)
                         {
                             tarefa.PontosGanhos = Utils.Current.NotasPorTarefa;
@@ -136,26 +140,76 @@ namespace RodaDaVidaAndroid.Telas
                             if (usuarioArea.Nota > 10)
                                 usuarioArea.Nota = 10;
                             RodaDaVida.Current.dataBaseManager.saveUsuarioArea(usuarioArea);
-                            texto = "Parabéns por concluir a tarefa! Você ganhou " + nota + 
+                            texto = "Parabéns por concluir a tarefa! Você ganhou " + nota +
                                         " ponto na área: " + area.Descricao + ". Continue em frente!";
                         }
-                        RodaDaVida.Current.dataBaseManager.saveTarefa(tarefa);
-                        
-                        Toast.MakeText(this, texto, ToastLength.Short).Show();
+                        else
+                        {
+                            var builder = new AlertDialog.Builder(this);
+                            builder.SetMessage("Deseja adicionar esta tarefa à Agenda do seu celular?");
+                            builder.SetPositiveButton("Sim", (s, ev) =>
+                            {
+                                // List Calendars
+                                var calendarsUri = CalendarContract.Calendars.ContentUri;
 
-                        OnBackPressed();
+                                string[] calendarsProjection = {
+                                   CalendarContract.Calendars.InterfaceConsts.Id,
+                                   CalendarContract.Calendars.InterfaceConsts.CalendarDisplayName,
+                                   CalendarContract.Calendars.InterfaceConsts.AccountName
+                                };
+
+                                var loader = new CursorLoader(this, calendarsUri, calendarsProjection, null, null, null);
+                                var cursor = (ICursor)loader.LoadInBackground();
+                                cursor.MoveToFirst();
+                                int calId = cursor.GetInt(cursor.GetColumnIndex(calendarsProjection[0]));
+
+                                ContentValues eventValues = new ContentValues();
+
+                                eventValues.Put(CalendarContract.Events.InterfaceConsts.CalendarId,
+                                    calId);
+                                eventValues.Put(CalendarContract.Events.InterfaceConsts.Title,
+                                    tarefa.NomeCurto);
+                                eventValues.Put(CalendarContract.Events.InterfaceConsts.Description,
+                                   tarefa.Descricao);
+                                eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtstart,
+                                    GetDateTimeMS(tarefa.Quando.Year, tarefa.Quando.Month, tarefa.Quando.Day, 0, 0));
+                                eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtend,
+                                    GetDateTimeMS(tarefa.Quando.Year, tarefa.Quando.Month, tarefa.Quando.Day, 0, 0));
+                                eventValues.Put(CalendarContract.Events.InterfaceConsts.EventTimezone,
+                                    "UTC");
+                                eventValues.Put(CalendarContract.Events.InterfaceConsts.EventEndTimezone,
+                                    "UTC");
+
+                                var uri = ContentResolver.Insert(CalendarContract.Events.ContentUri,
+                                    eventValues);
+                                var intent = new Intent(Intent.ActionView, uri);
+                                StartActivity(intent);
+
+                                RodaDaVida.Current.dataBaseManager.saveTarefa(tarefa);
+                                Toast.MakeText(this, texto, ToastLength.Short).Show();
+                                OnBackPressed();
+
+                            });
+                            builder.SetNegativeButton("Não", (s, ev) => 
+                            {
+                                RodaDaVida.Current.dataBaseManager.saveTarefa(tarefa);
+                                Toast.MakeText(this, texto, ToastLength.Short).Show();
+                                OnBackPressed();
+                            });
+                            builder.Create().Show();
+                        }
                     }
                 };
             }
 
             //Pegando clique em Excluir
-            if(btnExcluir != null)
+            if (btnExcluir != null)
             {
                 btnExcluir.Click += (sender, e) =>
                 {
                     var builder = new AlertDialog.Builder(this);
                     builder.SetMessage("Tem certeza que deseja excluir a tarefa?");
-                    builder.SetPositiveButton("Sim", (s, ev) => 
+                    builder.SetPositiveButton("Sim", (s, ev) =>
                         {
                             ExcluirTarefaAtual();
                             string texto = "Tarefa excluída com sucesso!";
@@ -167,7 +221,19 @@ namespace RodaDaVidaAndroid.Telas
                     builder.Create().Show();
                 };
             }
+        }
 
+        public long GetDateTimeMS(int yr, int month, int day, int hr, int min)
+        {
+            Calendar c = Calendar.GetInstance(Java.Util.TimeZone.Default);
+
+            c.Set(Java.Util.CalendarField.DayOfMonth, 15);
+            c.Set(Java.Util.CalendarField.HourOfDay, hr);
+            c.Set(Java.Util.CalendarField.Minute, min);
+            c.Set(Java.Util.CalendarField.Month, Calendar.December);
+            c.Set(Java.Util.CalendarField.Year, 2011);
+
+            return c.TimeInMillis;
         }
 
         private void ExcluirTarefaAtual()
