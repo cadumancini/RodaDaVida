@@ -11,6 +11,7 @@ using Android.Content;
 using Android.Provider;
 using Java.Util;
 using Android.Database;
+using Android.Views.InputMethods;
 
 namespace RodaDaVidaAndroid.Telas
 {
@@ -24,6 +25,7 @@ namespace RodaDaVidaAndroid.Telas
         CheckBox chckTarefaConcluida;
         Area areaAtual;
         Tarefa tarefa = new Tarefa();
+        private InputMethodManager imm;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -51,10 +53,19 @@ namespace RodaDaVidaAndroid.Telas
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinnerArea.Adapter = adapter;
 
+            var root = FindViewById<LinearLayout>(Resource.Id.rootTarefaLayout);
+
+            //Dando foco para o Layout
+            root.RequestFocus();
+
+            imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+
             //Preenchendo valores, caso vier de um clique numa tarefa, na lista da tela de Visao Geral
             int tarefaID = Intent.GetIntExtra("TarefaID", 0);
             if (tarefaID > 0)
             {
+                //imm.HideSoftInputFromWindow(btnSalvar.WindowToken, 0);
+
                 tarefa = RodaDaVida.Current.dataBaseManager.GetTarefa(tarefaID);
                 editTarefaNomeCurto.Text = tarefa.NomeCurto;
                 editTarefaDescricao.Text = tarefa.Descricao;
@@ -227,11 +238,11 @@ namespace RodaDaVidaAndroid.Telas
         {
             Calendar c = Calendar.GetInstance(Java.Util.TimeZone.Default);
 
-            c.Set(Java.Util.CalendarField.DayOfMonth, 15);
+            c.Set(Java.Util.CalendarField.DayOfMonth, day);
             c.Set(Java.Util.CalendarField.HourOfDay, hr);
             c.Set(Java.Util.CalendarField.Minute, min);
-            c.Set(Java.Util.CalendarField.Month, Calendar.December);
-            c.Set(Java.Util.CalendarField.Year, 2011);
+            c.Set(Java.Util.CalendarField.Month, (month - 1));
+            c.Set(Java.Util.CalendarField.Year, yr);
 
             return c.TimeInMillis;
         }

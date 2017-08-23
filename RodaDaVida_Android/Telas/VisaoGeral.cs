@@ -135,7 +135,7 @@ namespace RodaDaVidaAndroid.Telas
                 alert.SetTitle("Antenção!");
                 alert.SetMessage(mensagem);
                 alert.SetNeutralButton("OK", (senderAlert, args) => {
-                    var x = 0; 
+                    return;
                 });
 
                 Dialog dialog = alert.Create();
