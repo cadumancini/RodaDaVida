@@ -74,7 +74,7 @@ namespace RodaDaVidaAndroid.Telas
                 dataTarefa = tarefa.Quando;
                 editTarefaComo.Text = tarefa.Como;
                 UsuarioArea usuarioArea = RodaDaVida.Current.dataBaseManager.GetUsuarioArea(tarefa.UsuarioAreaID);
-                spinnerArea.SetSelection(usuarioArea.CodigoArea - 1);
+                spinnerArea.SetSelection(usuarioArea.AreaID - 1);
                 chckTarefaConcluida.Visibility = ViewStates.Visible;
                 btnExcluir.Visibility = ViewStates.Visible;
             }
@@ -151,8 +151,11 @@ namespace RodaDaVidaAndroid.Telas
                             if (usuarioArea.Nota > 10)
                                 usuarioArea.Nota = 10;
                             RodaDaVida.Current.dataBaseManager.saveUsuarioArea(usuarioArea);
+                            RodaDaVida.Current.dataBaseManager.saveTarefa(tarefa);
                             texto = "Parabéns por concluir a tarefa! Você ganhou " + nota +
                                         " ponto na área: " + area.Descricao + ". Continue em frente!";
+                            Toast.MakeText(this, texto, ToastLength.Short).Show();
+                            OnBackPressed();
                         }
                         else
                         {
