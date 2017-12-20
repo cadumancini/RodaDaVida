@@ -125,6 +125,7 @@ namespace RodaDaVidaAndroid.Telas
                     else if (UArea.Nota > 0)
                         UArea.Nota = 0;
 
+                    UArea.DataUltReducao = DateTime.Now;
                     RodaDaVida.Current.dataBaseManager.saveUsuarioArea(UArea);
                 }
 
