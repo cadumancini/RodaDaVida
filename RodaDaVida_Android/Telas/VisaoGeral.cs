@@ -61,7 +61,7 @@ namespace RodaDaVidaAndroid.Telas
         {
             base.OnResume();
 
-            notas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreas();
+            notas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreas("CODIGO");
             tarefas = RodaDaVida.Current.dataBaseManager.GetTarefas();
 
             //Deixando lista de tarefas apenas com as 10 primeiras da lista

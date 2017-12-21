@@ -65,9 +65,9 @@ namespace RodaDaVidaShared.Contracts
             return usuarioAreaRepository.GetUsuarioArea(id);
         }
 
-        public IList<UsuarioArea> GetUsuariosAreas()
+        public IList<UsuarioArea> GetUsuariosAreas(string order)
         {
-            return new List<UsuarioArea>(usuarioAreaRepository.GetUsuariosAreas());
+            return new List<UsuarioArea>(usuarioAreaRepository.GetUsuariosAreas(order));
         }
 
         public IList<UsuarioArea> GetUsuariosAreasADefinir()

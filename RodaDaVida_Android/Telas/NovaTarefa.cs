@@ -12,6 +12,7 @@ using Android.Provider;
 using Java.Util;
 using Android.Database;
 using Android.Views.InputMethods;
+using System.Collections.Generic;
 
 namespace RodaDaVidaAndroid.Telas
 {
@@ -26,6 +27,7 @@ namespace RodaDaVidaAndroid.Telas
         Area areaAtual;
         Tarefa tarefa = new Tarefa();
         private InputMethodManager imm;
+        IList<UsuarioArea> notas;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -82,6 +84,32 @@ namespace RodaDaVidaAndroid.Telas
             {
                 chckTarefaConcluida.Visibility = ViewStates.Invisible;
                 btnExcluir.Visibility = ViewStates.Invisible;
+
+                //Sugerir áreas com menores notas para criar a tarefa
+                notas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreas("NOTAS");
+                var texto = "Que bom que está dando um passo a frente e criando uma nova tarefa. " +
+                    "Aqui estão algumas das áreas que mais precisam de sua atenção:\n\n";
+                var item = 0;
+                foreach(UsuarioArea uArea in notas)
+                {
+                    item++;
+                    Area area = RodaDaVida.Current.dataBaseManager.GetArea(uArea.AreaID);
+                    texto += area.Descricao + "\n";
+
+                    if (item == 3)
+                        break;
+                }
+                texto += "\nContinue em frente!";
+                //Exibindo alerta com sugestão:
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Sugestão!");
+                alert.SetMessage(texto);
+                alert.SetNeutralButton("OK", (senderAlert, args) => {
+                    return;
+                });
+
+                Dialog dialog = alert.Create();
+                dialog.Show();
             }
 
             //Selecionando data

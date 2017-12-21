@@ -39,15 +39,23 @@ namespace RodaDaVidaShared.Contracts
             }
         }
 
-        public IEnumerable<UsuarioArea> GetUsuariosAreas()
+        public IEnumerable<UsuarioArea> GetUsuariosAreas(string order)
         {
             lock (locker)
             {
-                //return (from i in database.Table<UsuarioArea>() select i).ToList();
-                return database.Query<UsuarioArea>("SELECT USUARIOAREA.* " + 
-                                                     "FROM USUARIOAREA, AREA " +
-                                                    "WHERE USUARIOAREA.AREAID = AREA.ID " +
-                                                    "ORDER BY AREA.CODIGO");
+                if (order.Equals("CODIGO"))
+                    return database.Query<UsuarioArea>("SELECT USUARIOAREA.* " +
+                                                         "FROM USUARIOAREA, AREA " +
+                                                        "WHERE USUARIOAREA.AREAID = AREA.ID " +
+                                                        "ORDER BY AREA.CODIGO");
+                else if (order.Equals("NOTAS"))
+                    return database.Query<UsuarioArea>("SELECT USUARIOAREA.* " +
+                                                         "FROM USUARIOAREA, AREA " +
+                                                        "WHERE USUARIOAREA.AREAID = AREA.ID " +
+                                                        "ORDER BY USUARIOAREA.NOTA, AREA.CODIGO");
+                else
+                    return null;
+
             }
         }
 

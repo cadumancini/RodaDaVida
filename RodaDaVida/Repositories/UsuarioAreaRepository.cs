@@ -19,9 +19,9 @@ namespace RodaDaVidaShared.Repositories
             return db.GetUsuarioArea(id);
         }
 
-        public IEnumerable<UsuarioArea> GetUsuariosAreas()
+        public IEnumerable<UsuarioArea> GetUsuariosAreas(string order)
         {
-            return db.GetUsuariosAreas();
+            return db.GetUsuariosAreas(order);
         }
 
         public UsuarioArea GetUsuarioAreaByCodigo(int codigo)
