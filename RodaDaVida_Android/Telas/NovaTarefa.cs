@@ -77,6 +77,9 @@ namespace RodaDaVidaAndroid.Telas
                 editTarefaComo.Text = tarefa.Como;
                 UsuarioArea usuarioArea = RodaDaVida.Current.dataBaseManager.GetUsuarioArea(tarefa.UsuarioAreaID);
                 spinnerArea.SetSelection(usuarioArea.AreaID - 1);
+                chckTarefaConcluida.Checked = tarefa.Concluida;
+                if (tarefa.Concluida)
+                    chckTarefaConcluida.Enabled = false;
                 chckTarefaConcluida.Visibility = ViewStates.Visible;
                 btnExcluir.Visibility = ViewStates.Visible;
             }
@@ -170,19 +173,22 @@ namespace RodaDaVidaAndroid.Telas
 
                         if (tarefa.Concluida)
                         {
-                            tarefa.PontosGanhos = Utils.Current.NotasPorTarefa;
-                            string nota = Utils.Current.NotasPorTarefa.ToString();
-                            nota = nota.Replace('.', ',');
-                            if ((usuarioArea.DataUltTarefa == null) || (tarefa.Quando > usuarioArea.DataUltTarefa))
-                                usuarioArea.DataUltTarefa = tarefa.Quando;
-                            usuarioArea.Nota += tarefa.PontosGanhos;
-                            if (usuarioArea.Nota > 10)
-                                usuarioArea.Nota = 10;
-                            RodaDaVida.Current.dataBaseManager.saveUsuarioArea(usuarioArea);
-                            RodaDaVida.Current.dataBaseManager.saveTarefa(tarefa);
-                            texto = "Parabéns por concluir a tarefa! Você ganhou " + nota +
-                                        " ponto na área: " + area.Descricao + ". Continue em frente!";
-                            Toast.MakeText(this, texto, ToastLength.Short).Show();
+                            if (!tarefa.Concluida)
+                            {
+                                tarefa.PontosGanhos = Utils.Current.NotasPorTarefa;
+                                string nota = Utils.Current.NotasPorTarefa.ToString();
+                                nota = nota.Replace('.', ',');
+                                if ((usuarioArea.DataUltTarefa == null) || (tarefa.Quando > usuarioArea.DataUltTarefa))
+                                    usuarioArea.DataUltTarefa = tarefa.Quando;
+                                usuarioArea.Nota += tarefa.PontosGanhos;
+                                if (usuarioArea.Nota > 10)
+                                    usuarioArea.Nota = 10;
+                                RodaDaVida.Current.dataBaseManager.saveUsuarioArea(usuarioArea);
+                                RodaDaVida.Current.dataBaseManager.saveTarefa(tarefa);
+                                texto = "Parabéns por concluir a tarefa! Você ganhou " + nota +
+                                            " ponto na área: " + area.Descricao + ". Continue em frente!";
+                                Toast.MakeText(this, texto, ToastLength.Short).Show();
+                            }
                             OnBackPressed();
                         }
                         else

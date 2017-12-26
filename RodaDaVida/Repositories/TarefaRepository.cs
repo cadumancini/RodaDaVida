@@ -19,9 +19,9 @@ namespace RodaDaVidaShared.Repositories
             return db.GetTarefa(id);
         }
 
-        public IEnumerable<Tarefa> GetTarefas()
+        public IEnumerable<Tarefa> GetTarefas(bool trazerConcluidas)
         {
-            return db.GetTarefas();
+            return db.GetTarefas(trazerConcluidas);
         }
 
         public int SaveTarefa(Tarefa tarefa)

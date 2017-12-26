@@ -173,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\ProxTarefasItemListAdapter.cs" />
+    <Compile Include="Adapters\TodasTarefasItemListAdapter.cs" />
     <Compile Include="Adapters\UsuarioAreaItemListAdapter.cs" />
     <Compile Include="RodaDaVida.cs" />
     <Compile Include="Telas\AutoAvaliacao.cs" />
@@ -181,6 +182,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Telas\BemVindo.cs" />
     <Compile Include="Telas\NovaTarefa.cs" />
+    <Compile Include="Telas\TodasTarefas.cs" />
     <Compile Include="Telas\VisaoGeral.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +210,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ProximasTarefasListItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\TodasTarefas.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\TodasTarefasListItem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
