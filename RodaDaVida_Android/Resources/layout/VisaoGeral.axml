@@ -26,4 +26,12 @@
         android:id="@+id/ProximasTarefasList"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
+  <Button
+        android:text="Todas as Tarefas"
+        android:id="@+id/btnTodasTarefas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:layout_gravity="center" />
 </LinearLayout>

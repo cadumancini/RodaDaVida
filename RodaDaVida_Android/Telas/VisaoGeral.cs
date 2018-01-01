@@ -20,7 +20,7 @@ namespace RodaDaVidaAndroid.Telas
         IList<Tarefa> tarefas;
         ListView notasListView;
         ListView tarefasListView;
-        Button btnNovaTarefa;
+        Button btnNovaTarefa, btnTodasTarefas;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,9 +33,10 @@ namespace RodaDaVidaAndroid.Telas
             notasListView = FindViewById<ListView>(Resource.Id.NotasList);
             tarefasListView = FindViewById<ListView>(Resource.Id.ProximasTarefasList);
             btnNovaTarefa = FindViewById<Button>(Resource.Id.btnNovaTarefa);
+            btnTodasTarefas = FindViewById<Button>(Resource.Id.btnTodasTarefas);
 
             //Pegando clique em nova tarefa
-            if(btnNovaTarefa != null)
+            if (btnNovaTarefa != null)
             {
                 btnNovaTarefa.Click += (sender, e) =>
                 {
@@ -55,6 +56,16 @@ namespace RodaDaVidaAndroid.Telas
                 };
             }
 
+            //Pegando clique em botão para mostrar todas as tarefas
+            if(btnTodasTarefas != null)
+            {
+                btnTodasTarefas.Click += (sender, e) =>
+                {
+                    var telaTodasTarefas = new Intent(this, typeof(TodasTarefas));
+                    StartActivity(telaTodasTarefas);
+                };
+            }
+
         }
 
         protected override void OnResume()
@@ -62,7 +73,7 @@ namespace RodaDaVidaAndroid.Telas
             base.OnResume();
 
             notas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreas("CODIGO");
-            tarefas = RodaDaVida.Current.dataBaseManager.GetTarefas();
+            tarefas = RodaDaVida.Current.dataBaseManager.GetTarefas(false);
 
             //Deixando lista de tarefas apenas com as 10 primeiras da lista
             if(tarefas.Count > 10)

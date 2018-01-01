@@ -2144,14 +2144,14 @@ namespace RodaDaVidaAndroid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b00b1
-			public const int NomeArea = 2131427505;
+			// aapt resource value: 0x7f0b00ba
+			public const int NomeArea = 2131427514;
 			
-			// aapt resource value: 0x7f0b00b2
-			public const int NotaArea = 2131427506;
+			// aapt resource value: 0x7f0b00bb
+			public const int NotaArea = 2131427515;
 			
-			// aapt resource value: 0x7f0b00b3
-			public const int NotasList = 2131427507;
+			// aapt resource value: 0x7f0b00bc
+			public const int NotasList = 2131427516;
 			
 			// aapt resource value: 0x7f0b009c
 			public const int ProxTarNomeArea = 2131427484;
@@ -2162,8 +2162,29 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b009e
 			public const int ProxTarQuando = 2131427486;
 			
+			// aapt resource value: 0x7f0b00bf
+			public const int ProximasTarefasList = 2131427519;
+			
+			// aapt resource value: 0x7f0b00b7
+			public const int TodTarComo = 2131427511;
+			
+			// aapt resource value: 0x7f0b00b8
+			public const int TodTarConcluida = 2131427512;
+			
+			// aapt resource value: 0x7f0b00b4
+			public const int TodTarNomeArea = 2131427508;
+			
+			// aapt resource value: 0x7f0b00b3
+			public const int TodTarNomeCurto = 2131427507;
+			
 			// aapt resource value: 0x7f0b00b6
-			public const int ProximasTarefasList = 2131427510;
+			public const int TodTarOnde = 2131427510;
+			
+			// aapt resource value: 0x7f0b00b5
+			public const int TodTarQuando = 2131427509;
+			
+			// aapt resource value: 0x7f0b00b1
+			public const int TodasTarefasList = 2131427505;
 			
 			// aapt resource value: 0x7f0b0087
 			public const int action0 = 2131427463;
@@ -2261,8 +2282,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b0082
 			public const int btnCadastrar = 2131427458;
 			
-			// aapt resource value: 0x7f0b00b4
-			public const int btnNovaTarefa = 2131427508;
+			// aapt resource value: 0x7f0b00bd
+			public const int btnNovaTarefa = 2131427517;
 			
 			// aapt resource value: 0x7f0b006e
 			public const int btnSalvarNota = 2131427438;
@@ -2275,6 +2296,9 @@ namespace RodaDaVidaAndroid
 			
 			// aapt resource value: 0x7f0b00af
 			public const int btnTarefaSalvar = 2131427503;
+			
+			// aapt resource value: 0x7f0b00c0
+			public const int btnTodasTarefas = 2131427520;
 			
 			// aapt resource value: 0x7f0b0016
 			public const int button = 2131427350;
@@ -2293,6 +2317,9 @@ namespace RodaDaVidaAndroid
 			
 			// aapt resource value: 0x7f0b00ad
 			public const int chckTarefaConcluida = 2131427501;
+			
+			// aapt resource value: 0x7f0b00b0
+			public const int chckTarefasConcluidas = 2131427504;
 			
 			// aapt resource value: 0x7f0b0054
 			public const int checkbox = 2131427412;
@@ -2444,8 +2471,11 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b009b
 			public const int lstProximasTarefas = 2131427483;
 			
-			// aapt resource value: 0x7f0b00b0
-			public const int lstUsuarioArea = 2131427504;
+			// aapt resource value: 0x7f0b00b2
+			public const int lstTodasTarefas = 2131427506;
+			
+			// aapt resource value: 0x7f0b00b9
+			public const int lstUsuarioArea = 2131427513;
 			
 			// aapt resource value: 0x7f0b008a
 			public const int media_actions = 2131427466;
@@ -2651,8 +2681,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b006c
 			public const int txtPergunta = 2131427436;
 			
-			// aapt resource value: 0x7f0b00b5
-			public const int txtProximasTarefas = 2131427509;
+			// aapt resource value: 0x7f0b00be
+			public const int txtProximasTarefas = 2131427518;
 			
 			// aapt resource value: 0x7f0b0080
 			public const int txtSeuNome = 2131427456;
@@ -2921,10 +2951,16 @@ namespace RodaDaVidaAndroid
 			public const int Tarefa = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int UsuarioAreaListItem = 2130903102;
+			public const int TodasTarefas = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int VisaoGeral = 2130903103;
+			public const int TodasTarefasListItem = 2130903103;
+			
+			// aapt resource value: 0x7f030040
+			public const int UsuarioAreaListItem = 2130903104;
+			
+			// aapt resource value: 0x7f030041
+			public const int VisaoGeral = 2130903105;
 			
 			static Layout()
 			{

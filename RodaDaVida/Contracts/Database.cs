@@ -80,14 +80,19 @@ namespace RodaDaVidaShared.Contracts
             }
         }
 
-        public IEnumerable<Tarefa> GetTarefas()
+        public IEnumerable<Tarefa> GetTarefas(bool trazerConcluidas)
         {
             lock (locker)
             {
-                return database.Query<Tarefa>("SELECT * " +
-                                                "FROM TAREFA " +
-                                               "WHERE CONCLUIDA = 0 " +
-                                               "ORDER BY QUANDO, NOMECURTO");
+                if(trazerConcluidas)
+                    return database.Query<Tarefa>("SELECT * " +
+                                                    "FROM TAREFA " +
+                                                   "ORDER BY QUANDO, NOMECURTO");
+                else
+                    return database.Query<Tarefa>("SELECT * " +
+                                                    "FROM TAREFA " +
+                                                   "WHERE CONCLUIDA = 0 " +
+                                                   "ORDER BY QUANDO, NOMECURTO");
             }
         }
 

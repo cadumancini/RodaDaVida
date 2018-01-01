@@ -95,9 +95,9 @@ namespace RodaDaVidaShared.Contracts
             return tarefaRepository.GetTarefa(id);
         }
 
-        public IList<Tarefa> GetTarefas()
+        public IList<Tarefa> GetTarefas(bool trazerConcluidas)
         {
-            return new List<Tarefa>(tarefaRepository.GetTarefas());
+            return new List<Tarefa>(tarefaRepository.GetTarefas(trazerConcluidas));
         }
 
         public int saveTarefa(Tarefa tarefa)
