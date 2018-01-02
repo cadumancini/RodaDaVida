@@ -13,6 +13,7 @@ using Java.Util;
 using Android.Database;
 using Android.Views.InputMethods;
 using System.Collections.Generic;
+using Plugin.Share;
 
 namespace RodaDaVidaAndroid.Telas
 {
@@ -159,7 +160,7 @@ namespace RodaDaVidaAndroid.Telas
                     if (salvar)
                     {
                         string texto = "Tarefa salva com sucesso!";
-
+                        
                         UsuarioArea usuarioArea = RodaDaVida.Current.dataBaseManager.GetUsuarioAreaByCodigo(areaAtual.ID);
                         Area area = RodaDaVida.Current.dataBaseManager.GetArea(usuarioArea.AreaID);
                         tarefa.NomeCurto = editTarefaNomeCurto.Text;
@@ -168,13 +169,12 @@ namespace RodaDaVidaAndroid.Telas
                         tarefa.Quando = dataTarefa;
                         tarefa.Como = editTarefaComo.Text;
                         tarefa.UsuarioAreaID = usuarioArea.ID;
-                        if (tarefa.ID > 0)
-                            tarefa.Concluida = chckTarefaConcluida.Checked;
-
-                        if (tarefa.Concluida)
+                        
+                        if (chckTarefaConcluida.Checked)
                         {
-                            if (!tarefa.Concluida)
+                            if (!tarefa.Concluida && tarefa.ID > 0)
                             {
+                                tarefa.Concluida = true;
                                 tarefa.PontosGanhos = Utils.Current.NotasPorTarefa;
                                 string nota = Utils.Current.NotasPorTarefa.ToString();
                                 nota = nota.Replace('.', ',');
@@ -185,11 +185,40 @@ namespace RodaDaVidaAndroid.Telas
                                     usuarioArea.Nota = 10;
                                 RodaDaVida.Current.dataBaseManager.saveUsuarioArea(usuarioArea);
                                 RodaDaVida.Current.dataBaseManager.saveTarefa(tarefa);
+
+                                //Dar opção para compartilhar tarefa concluída:
+
                                 texto = "Parabéns por concluir a tarefa! Você ganhou " + nota +
-                                            " ponto na área: " + area.Descricao + ". Continue em frente!";
-                                Toast.MakeText(this, texto, ToastLength.Short).Show();
+                                            " ponto na área: " + area.Descricao + ". Continue em frente!\n\n" +
+                                            "Compartilhando o seu reultado, você ganha o dobro de pontos!\n" +
+                                            "Deseja receber o dobro de pontos para esta tarefa?";
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage(texto);
+
+                                builder.SetPositiveButton("Sim", async(s, ev) =>
+                                {
+                                    //Intent para compartilhar
+
+                                    var textoCompartilhar = "Consegui " + (Utils.Current.NotasPorTarefa * 2) + 
+                                        " ponto(s) na área " + area.Descricao + " da minha vida, a partir do aplicativo " +
+                                        "Roda Da Vida, e gostaria de compartilhar meu progresso!";
+                                    var title = "Meu progresso na Roda da Vida";
+
+                                    await CrossShare.Current.Share(new Plugin.Share.Abstractions.ShareMessage
+                                    {
+                                        Text = textoCompartilhar,
+                                        Title = title
+                                    });
+
+                                    OnBackPressed();
+
+                                });
+                                builder.SetNegativeButton("Não", (s, ev) =>
+                                {
+                                    OnBackPressed();
+                                });
+                                builder.Create().Show();
                             }
-                            OnBackPressed();
                         }
                         else
                         {
