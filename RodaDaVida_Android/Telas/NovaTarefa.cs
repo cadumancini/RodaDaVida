@@ -194,11 +194,9 @@ namespace RodaDaVidaAndroid.Telas
                                             "Deseja receber o dobro de pontos para esta tarefa?";
                                 var builder = new AlertDialog.Builder(this);
                                 builder.SetMessage(texto);
-
                                 builder.SetPositiveButton("Sim", async(s, ev) =>
                                 {
                                     //Intent para compartilhar
-
                                     var textoCompartilhar = "Consegui " + (Utils.Current.NotasPorTarefa * 2) + 
                                         " ponto(s) na área " + area.Descricao + " da minha vida, a partir do aplicativo " +
                                         "Roda Da Vida, e gostaria de compartilhar meu progresso!";
@@ -209,7 +207,6 @@ namespace RodaDaVidaAndroid.Telas
                                         Text = textoCompartilhar,
                                         Title = title
                                     });
-
                                     OnBackPressed();
 
                                 });
