@@ -7,6 +7,10 @@
         android:id="@+id/NotasList"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
+    <rodadavidaandroid.views.CirculoTeste
+        android:id="@+id/Circulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <Button
         android:text="Nova Tarefa"
         android:id="@+id/btnNovaTarefa"
@@ -15,18 +19,18 @@
         android:gravity="center"
         android:textAllCaps="false"
         android:layout_gravity="center" />
-  <TextView
+    <TextView
         android:text="Próximas Tarefas:"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:id="@+id/txtProximasTarefas" />
-  <ListView
+    <ListView
         android:id="@+id/ProximasTarefasList"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
-  <Button
+    <Button
         android:text="Todas as Tarefas"
         android:id="@+id/btnTodasTarefas"
         android:layout_width="wrap_content"
