@@ -13,12 +13,12 @@ namespace RodaDaVidaAndroid.Telas
     [Activity(Label = "Visao_Geral")]
     class VisaoGeral : Activity
     {
-        UsuarioAreaItemListAdapter notasListAdapter;
+        //UsuarioAreaItemListAdapter notasListAdapter;
         ProxTarefasItemListAdapter tarefasListAdapter;
 
         IList<UsuarioArea> notas;
         IList<Tarefa> tarefas;
-        ListView notasListView;
+        //ListView notasListView;
         ListView tarefasListView;
         Button btnNovaTarefa, btnTodasTarefas;
 
@@ -125,15 +125,15 @@ namespace RodaDaVidaAndroid.Telas
             if (areasDescontar.Count > 0)
             {
                 var mensagem = "Olá! Infelizmente você não concluiu nenhuma tarefa na(s) área(s) abaixo" +
-                    ", e teremos que descontar 0,5 ponto de cada: \n\n";
+                    ", e teremos que descontar 1 ponto de cada: \n\n";
                 foreach (UsuarioArea UArea in areasDescontar)
                 {
                     Area area = RodaDaVida.Current.dataBaseManager.GetArea(UArea.AreaID);
                     mensagem += area.Descricao + "\n";
 
-                    if (UArea.Nota > 0.5)
-                        UArea.Nota -= 0.5;
-                    else if (UArea.Nota > 0)
+                    if (UArea.Nota > 1)
+                        UArea.Nota -= 1;
+                    else
                         UArea.Nota = 0;
 
                     UArea.DataUltReducao = DateTime.Now;

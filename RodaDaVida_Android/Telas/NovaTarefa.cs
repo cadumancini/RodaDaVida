@@ -86,8 +86,8 @@ namespace RodaDaVidaAndroid.Telas
             }
             else
             {
-                chckTarefaConcluida.Visibility = ViewStates.Invisible;
-                btnExcluir.Visibility = ViewStates.Invisible;
+                chckTarefaConcluida.Visibility = ViewStates.Gone;
+                btnExcluir.Visibility = ViewStates.Gone;
 
                 //Sugerir áreas com menores notas para criar a tarefa
                 notas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreas("NOTAS");
