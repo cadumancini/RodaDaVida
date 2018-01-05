@@ -30,7 +30,7 @@ namespace RodaDaVidaAndroid.Telas
             SetContentView(Resource.Layout.VisaoGeral);
 
             //Buscando os controles
-            notasListView = FindViewById<ListView>(Resource.Id.NotasList);
+            //notasListView = FindViewById<ListView>(Resource.Id.NotasList);
             tarefasListView = FindViewById<ListView>(Resource.Id.ProximasTarefasList);
             btnNovaTarefa = FindViewById<Button>(Resource.Id.btnNovaTarefa);
             btnTodasTarefas = FindViewById<Button>(Resource.Id.btnTodasTarefas);
@@ -91,11 +91,11 @@ namespace RodaDaVidaAndroid.Telas
             }
 
             //Criando os Adapters
-            notasListAdapter = new UsuarioAreaItemListAdapter(this, notas);
+            //notasListAdapter = new UsuarioAreaItemListAdapter(this, notas);
             tarefasListAdapter = new ProxTarefasItemListAdapter(this, tarefas);
 
             //Atribuindo os Adapters para as ListVews
-            notasListView.Adapter = notasListAdapter;
+            //notasListView.Adapter = notasListAdapter;
             tarefasListView.Adapter = tarefasListAdapter;
 
             //Verificando se é hora de abaixar pontos de alguma área:

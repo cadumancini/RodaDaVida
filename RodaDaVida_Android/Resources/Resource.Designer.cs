@@ -2288,8 +2288,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b003c
 			public const int CTRL = 2131427388;
 			
-			// aapt resource value: 0x7f0b00c9
-			public const int Circulo = 2131427529;
+			// aapt resource value: 0x7f0b00c8
+			public const int Circulo = 2131427528;
 			
 			// aapt resource value: 0x7f0b003d
 			public const int FUNCTION = 2131427389;
@@ -2303,9 +2303,6 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b00c7
 			public const int NotaArea = 2131427527;
 			
-			// aapt resource value: 0x7f0b00c8
-			public const int NotasList = 2131427528;
-			
 			// aapt resource value: 0x7f0b00a7
 			public const int ProxTarNomeArea = 2131427495;
 			
@@ -2315,8 +2312,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b00a9
 			public const int ProxTarQuando = 2131427497;
 			
-			// aapt resource value: 0x7f0b00cc
-			public const int ProximasTarefasList = 2131427532;
+			// aapt resource value: 0x7f0b00cb
+			public const int ProximasTarefasList = 2131427531;
 			
 			// aapt resource value: 0x7f0b003f
 			public const int SHIFT = 2131427391;
@@ -2447,8 +2444,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b0091
 			public const int btnCadastrar = 2131427473;
 			
-			// aapt resource value: 0x7f0b00ca
-			public const int btnNovaTarefa = 2131427530;
+			// aapt resource value: 0x7f0b00c9
+			public const int btnNovaTarefa = 2131427529;
 			
 			// aapt resource value: 0x7f0b007d
 			public const int btnSalvarNota = 2131427453;
@@ -2462,8 +2459,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b00ba
 			public const int btnTarefaSalvar = 2131427514;
 			
-			// aapt resource value: 0x7f0b00cd
-			public const int btnTodasTarefas = 2131427533;
+			// aapt resource value: 0x7f0b00cc
+			public const int btnTodasTarefas = 2131427532;
 			
 			// aapt resource value: 0x7f0b001b
 			public const int button = 2131427355;
@@ -2855,8 +2852,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0b007b
 			public const int txtPergunta = 2131427451;
 			
-			// aapt resource value: 0x7f0b00cb
-			public const int txtProximasTarefas = 2131427531;
+			// aapt resource value: 0x7f0b00ca
+			public const int txtProximasTarefas = 2131427530;
 			
 			// aapt resource value: 0x7f0b008f
 			public const int txtSeuNome = 2131427471;
