@@ -3317,14 +3317,14 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f060024
 			public const int com_facebook_smart_login_confirmation_cancel = 2131099684;
 			
-			// aapt resource value: 0x7f060028
-			public const int com_facebook_smart_login_confirmation_continue_as = 2131099688;
-			
 			// aapt resource value: 0x7f060025
-			public const int com_facebook_smart_login_confirmation_title = 2131099685;
+			public const int com_facebook_smart_login_confirmation_continue_as = 2131099685;
 			
 			// aapt resource value: 0x7f060026
-			public const int com_facebook_tooltip_default = 2131099686;
+			public const int com_facebook_smart_login_confirmation_title = 2131099686;
+			
+			// aapt resource value: 0x7f060027
+			public const int com_facebook_tooltip_default = 2131099687;
 			
 			// aapt resource value: 0x7f060001
 			public const int common_google_play_services_enable_button = 2131099649;
@@ -3377,8 +3377,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f060010
 			public const int common_signin_button_text_long = 2131099664;
 			
-			// aapt resource value: 0x7f060027
-			public const int messenger_send_button_text = 2131099687;
+			// aapt resource value: 0x7f060028
+			public const int messenger_send_button_text = 2131099688;
 			
 			// aapt resource value: 0x7f06003c
 			public const int search_menu_title = 2131099708;

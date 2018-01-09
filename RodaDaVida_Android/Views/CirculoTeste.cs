@@ -109,6 +109,7 @@ namespace RodaDaVidaAndroid.Views
             _shape9.Draw(canvas);
             _shape10.Draw(canvas);
 
+            
             //Desenhando retas:
             float startX = 310, startY = 310, length = 230;
             double angleRadians = (Math.PI / 180.0) * 255;
@@ -170,7 +171,7 @@ namespace RodaDaVidaAndroid.Views
             canvas.DrawLine(startX, startY,
                 Convert.ToSingle((startX + (Math.Cos(angleRadians) * length))),
                 Convert.ToSingle(startY + (Math.Sin(angleRadians) * length)), paint);
-
+            
             //Desenhando numeros:
             paint.StrokeWidth = 1;
             canvas.DrawText("1", startX, startY - 35, paint);
@@ -324,7 +325,7 @@ namespace RodaDaVidaAndroid.Views
             canvas.DrawText("9", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 200)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 200)), paint);
             canvas.DrawText("10", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 220)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 220)), paint);
             canvas.DrawText("Saúde", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 250)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 250)), paint);
-
+            
             //Desenhando pontos das notas:
             notas = RodaDaVida.Current.dataBaseManager.GetUsuariosAreas("CODIGO");
             pontos = new PointF[12];

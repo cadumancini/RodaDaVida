@@ -190,15 +190,15 @@ namespace RodaDaVidaAndroid.Telas
 
                                 texto = "Parabéns por concluir a tarefa! Você ganhou " + nota +
                                             " ponto na área: " + area.Descricao + ". Continue em frente!\n\n" +
-                                            "Compartilhando o seu reultado, você ganha o dobro de pontos!\n" +
-                                            "Deseja receber o dobro de pontos para esta tarefa?";
+                                            "Compartilhando o seu reultado, você ajuda outras pessoas a progredirem!\n" +
+                                            "Deseja compartilhar o resultado desta tarefa?";
                                 var builder = new AlertDialog.Builder(this);
                                 builder.SetMessage(texto);
                                 builder.SetPositiveButton("Sim", async(s, ev) =>
                                 {
                                     //Intent para compartilhar
-                                    var textoCompartilhar = "Consegui " + (Utils.Current.NotasPorTarefa * 2) + 
-                                        " ponto(s) na área " + area.Descricao + " da minha vida, a partir do aplicativo " +
+                                    var textoCompartilhar = "Consegui " + Utils.Current.NotasPorTarefa + 
+                                        " ponto(s) na área " + area.Descricao + " da minha vida, usando o aplicativo " +
                                         "Roda Da Vida, e gostaria de compartilhar meu progresso!";
                                     var title = "Meu progresso na Roda da Vida";
 
