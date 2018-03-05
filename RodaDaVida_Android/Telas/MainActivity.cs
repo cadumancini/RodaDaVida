@@ -23,9 +23,14 @@ namespace RodaDaVidaAndroid.Telas
             this.RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
             usuarios = RodaDaVida.Current.dataBaseManager.GetUsuarios();
 
+            SetContentView(Resource.Layout.Main);
+
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            SetActionBar(toolbar);
+            ActionBar.Title = "My Toolbar";
+
             if (usuarios.Count == 0)
             {
-                SetContentView(Resource.Layout.Main);
 
                 //Buscando controles:
                 editNome = FindViewById<EditText>(Resource.Id.editNome);
