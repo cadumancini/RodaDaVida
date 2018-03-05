@@ -19,6 +19,7 @@ namespace RodaDaVidaAndroid.Telas
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            this.RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
             SetContentView(Resource.Layout.BemVindo);
 
             //Buscando controles:

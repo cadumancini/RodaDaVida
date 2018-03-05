@@ -20,7 +20,7 @@ namespace RodaDaVidaAndroid.Telas
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
+            this.RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
             usuarios = RodaDaVida.Current.dataBaseManager.GetUsuarios();
 
             if (usuarios.Count == 0)
