@@ -7,6 +7,9 @@
       android:id="@+id/NotasList"
       android:layout_width="fill_parent"
       android:layout_height="wrap_content" /> -->
+    <include
+      android:id="@+id/toolbar"
+      layout="@layout/toolbar" />
     <rodadavidaandroid.views.CirculoTeste
         android:id="@+id/Circulo"
         android:gravity="center"

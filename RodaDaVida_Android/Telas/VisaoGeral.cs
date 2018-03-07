@@ -7,11 +7,13 @@ using RodaDaVidaAndroid.Adapters;
 using RodaDaVidaShared.Tabelas;
 using Android.Content;
 using System;
+using Android.Support.V7.App;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace RodaDaVidaAndroid.Telas
 {
     [Activity(Label = "Visao_Geral")]
-    class VisaoGeral : Activity
+    class VisaoGeral : AppCompatActivity
     {
         //UsuarioAreaItemListAdapter notasListAdapter;
         ProxTarefasItemListAdapter tarefasListAdapter;
@@ -29,6 +31,17 @@ namespace RodaDaVidaAndroid.Telas
 
             //Definindo layout
             SetContentView(Resource.Layout.VisaoGeral);
+
+            //Acrescentando toolbar
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            //Toolbar will now take on default actionbar characteristics
+            SetSupportActionBar(toolbar);
+
+            SupportActionBar.Title = "Visão Geral - Roda da Vida";
+
+            //Nas outras telas, colocar isso:
+            ///SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            ///SupportActionBar.SetHomeButtonEnabled(true);
 
             //Buscando os controles
             //notasListView = FindViewById<ListView>(Resource.Id.NotasList);
@@ -144,7 +157,7 @@ namespace RodaDaVidaAndroid.Telas
                 mensagem += "Sugerimos que você preste atenção às áreas afetadas, e crie agora mesmo uma tarefa para melhorar a sua pontuação!";
 
                 //set alert for executing the task
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this);
                 alert.SetTitle("Antenção!");
                 alert.SetMessage(mensagem);
                 alert.SetNeutralButton("OK", (senderAlert, args) => {

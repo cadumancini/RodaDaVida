@@ -6,11 +6,14 @@ using Android.OS;
 using Android.Widget;
 using RodaDaVidaAndroid.Adapters;
 using RodaDaVidaShared.Tabelas;
+using Android.Support.V7.App;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Views;
 
 namespace RodaDaVidaAndroid.Telas
 {
     [Activity(Label = "Todas_Tarefas")]
-    class TodasTarefas : Activity
+    class TodasTarefas : AppCompatActivity
     {
         TodasTarefasItemListAdapter tarefasListAdapter;
         IList<Tarefa> tarefas;
@@ -25,6 +28,15 @@ namespace RodaDaVidaAndroid.Telas
 
             //Definindo layout
             SetContentView(Resource.Layout.TodasTarefas);
+
+            //Acrescentando toolbar
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            //Toolbar will now take on default actionbar characteristics
+            SetSupportActionBar(toolbar);
+
+            SupportActionBar.Title = "Todas as Tarefas";
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetHomeButtonEnabled(true);
 
             //Buscando os controles
             tarefasListView = FindViewById<ListView>(Resource.Id.TodasTarefasList);
@@ -56,6 +68,15 @@ namespace RodaDaVidaAndroid.Telas
                     atualizarAdapter();
                 };
             }
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            //Back button pressed -> toggle event
+            if (item.ItemId == Android.Resource.Id.Home)
+                this.OnBackPressed();
+
+            return base.OnOptionsItemSelected(item);
         }
 
         protected override void OnResume()

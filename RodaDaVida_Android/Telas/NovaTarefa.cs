@@ -14,11 +14,13 @@ using Android.Database;
 using Android.Views.InputMethods;
 using System.Collections.Generic;
 using Plugin.Share;
+using Android.Support.V7.App;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace RodaDaVidaAndroid.Telas
 {
     [Activity(Label = "NovaTarefa")]
-    public class NovaTarefa : Activity
+    public class NovaTarefa : AppCompatActivity
     {
         Button btnSelecionarData, btnSalvar, btnExcluir;
         EditText editTarefaNomeCurto, editTarefaDescricao, editTarefaOnde, editTarefaQuando, editTarefaComo;
@@ -37,6 +39,15 @@ namespace RodaDaVidaAndroid.Telas
 
             //Definindo layout
             SetContentView(Resource.Layout.Tarefa);
+
+            //Acrescentando toolbar
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            //Toolbar will now take on default actionbar characteristics
+            SetSupportActionBar(toolbar);
+
+            SupportActionBar.Title = "Criar ou Editar Tarefa";
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetHomeButtonEnabled(true);
 
             //Buscando os controles
             btnSelecionarData = FindViewById<Button>(Resource.Id.btnSelecionarData);
@@ -106,7 +117,7 @@ namespace RodaDaVidaAndroid.Telas
                 }
                 texto += "\nContinue em frente!";
                 //Exibindo alerta com sugestão:
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this);
                 alert.SetTitle("Sugestão!");
                 alert.SetMessage(texto);
                 alert.SetNeutralButton("OK", (senderAlert, args) => {
@@ -193,7 +204,7 @@ namespace RodaDaVidaAndroid.Telas
                                             " ponto na área: " + area.Descricao + ". Continue em frente!\n\n" +
                                             "Compartilhando o seu reultado, você ajuda outras pessoas a progredirem!\n" +
                                             "Deseja compartilhar o resultado desta tarefa?";
-                                var builder = new AlertDialog.Builder(this);
+                                var builder = new Android.Support.V7.App.AlertDialog.Builder(this);
                                 builder.SetMessage(texto);
                                 builder.SetPositiveButton("Sim", async(s, ev) =>
                                 {
@@ -220,7 +231,7 @@ namespace RodaDaVidaAndroid.Telas
                         }
                         else
                         {
-                            var builder = new AlertDialog.Builder(this);
+                            var builder = new Android.Support.V7.App.AlertDialog.Builder(this);
                             builder.SetMessage("Deseja adicionar esta tarefa à Agenda do seu celular?");
                             builder.SetPositiveButton("Sim", (s, ev) =>
                             {
@@ -282,7 +293,7 @@ namespace RodaDaVidaAndroid.Telas
             {
                 btnExcluir.Click += (sender, e) =>
                 {
-                    var builder = new AlertDialog.Builder(this);
+                    var builder = new Android.Support.V7.App.AlertDialog.Builder(this);
                     builder.SetMessage("Tem certeza que deseja excluir a tarefa?");
                     builder.SetPositiveButton("Sim", (s, ev) =>
                         {
@@ -296,6 +307,16 @@ namespace RodaDaVidaAndroid.Telas
                     builder.Create().Show();
                 };
             }
+        }
+
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            //Back button pressed -> toggle event
+            if (item.ItemId == Android.Resource.Id.Home)
+                this.OnBackPressed();
+
+            return base.OnOptionsItemSelected(item);
         }
 
         public long GetDateTimeMS(int yr, int month, int day, int hr, int min)
