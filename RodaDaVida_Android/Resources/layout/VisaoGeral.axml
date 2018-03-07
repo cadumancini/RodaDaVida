@@ -7,39 +7,46 @@
       android:id="@+id/NotasList"
       android:layout_width="fill_parent"
       android:layout_height="wrap_content" /> -->
-    <include
-      android:id="@+id/toolbar"
-      layout="@layout/toolbar" />
-    <rodadavidaandroid.views.CirculoTeste
-        android:id="@+id/Circulo"
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="400dp" />
-    <Button
-        android:text="Nova Tarefa"
-        android:id="@+id/btnNovaTarefa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textAllCaps="false"
-        android:layout_gravity="center" />
-    <TextView
-        android:text="Próximas Tarefas:"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:id="@+id/txtProximasTarefas" />
-    <ListView
-        android:id="@+id/ProximasTarefasList"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="Todas as Tarefas"
-        android:id="@+id/btnTodasTarefas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textAllCaps="false"
-        android:layout_gravity="center" />
+  <include
+    android:id="@+id/toolbar"
+    layout="@layout/toolbar" />
+  <rodadavidaandroid.views.CirculoTeste
+      android:id="@+id/Circulo"
+      android:gravity="center"
+      android:layout_width="wrap_content"
+      android:layout_height="400dp" />
+  <!--
+  <Button
+      android:text="Nova Tarefa"
+      android:id="@+id/btnNovaTarefa"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:textAllCaps="false"
+      android:layout_gravity="center" />-->
+  <TextView
+      android:text="Próximas Tarefas:"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@android:color/black"
+      android:id="@+id/txtProximasTarefas" />
+  <ListView
+      android:id="@+id/ProximasTarefasList"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"/>/>
+  <Button
+      android:text="Todas as Tarefas"
+      android:id="@+id/btnTodasTarefas"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:textAllCaps="false"
+      android:layout_gravity="center" />
+  <android.support.design.widget.FloatingActionButton
+      android:id="@+id/btnNovaTarefa"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom|end"
+      android:layout_margin="16dp" />
 </LinearLayout>

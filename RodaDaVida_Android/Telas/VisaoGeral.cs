@@ -9,6 +9,7 @@ using Android.Content;
 using System;
 using Android.Support.V7.App;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Support.Design.Widget;
 
 namespace RodaDaVidaAndroid.Telas
 {
@@ -22,7 +23,8 @@ namespace RodaDaVidaAndroid.Telas
         IList<Tarefa> tarefas;
         //ListView notasListView;
         ListView tarefasListView;
-        Button btnNovaTarefa, btnTodasTarefas;
+        Button btnTodasTarefas;
+        FloatingActionButton btnNovaTarefa;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -46,7 +48,7 @@ namespace RodaDaVidaAndroid.Telas
             //Buscando os controles
             //notasListView = FindViewById<ListView>(Resource.Id.NotasList);
             tarefasListView = FindViewById<ListView>(Resource.Id.ProximasTarefasList);
-            btnNovaTarefa = FindViewById<Button>(Resource.Id.btnNovaTarefa);
+            btnNovaTarefa = FindViewById<FloatingActionButton>(Resource.Id.btnNovaTarefa);
             btnTodasTarefas = FindViewById<Button>(Resource.Id.btnTodasTarefas);
 
             //Pegando clique em nova tarefa
