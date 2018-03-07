@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/rootLayout"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true">
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
     <TextView
         android:text="Seja bem vindo!"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -62,4 +60,4 @@
         android:gravity="center"
         android:textAllCaps="false"
         android:layout_gravity="center" />
-</RelativeLayout>
+</LinearLayout>

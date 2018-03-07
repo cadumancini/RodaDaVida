@@ -220,12 +220,6 @@
     <AndroidResource Include="Resources\layout\TodasTarefasListItem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <Content Include="Resources\values\Styles.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="Resources\layout\toolbar.axml">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
