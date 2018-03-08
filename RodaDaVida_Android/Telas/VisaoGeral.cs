@@ -3,13 +3,13 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using Android.Content;
+using Android.Support.Design.Widget;
 using RodaDaVidaAndroid.Adapters;
 using RodaDaVidaShared.Tabelas;
-using Android.Content;
 using System;
 using Android.Support.V7.App;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
-using Android.Support.Design.Widget;
 
 namespace RodaDaVidaAndroid.Telas
 {
@@ -29,7 +29,7 @@ namespace RodaDaVidaAndroid.Telas
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            this.RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
+            RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
 
             //Definindo layout
             SetContentView(Resource.Layout.VisaoGeral);
@@ -40,10 +40,6 @@ namespace RodaDaVidaAndroid.Telas
             SetSupportActionBar(toolbar);
 
             SupportActionBar.Title = "Visão Geral - Roda da Vida";
-
-            //Nas outras telas, colocar isso:
-            ///SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            ///SupportActionBar.SetHomeButtonEnabled(true);
 
             //Buscando os controles
             //notasListView = FindViewById<ListView>(Resource.Id.NotasList);
