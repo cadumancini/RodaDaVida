@@ -26,6 +26,7 @@ namespace RodaDaVidaAndroid.Telas
             base.OnCreate(savedInstanceState);
             this.RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
             SetContentView(Resource.Layout.AutoAvaliacao);
+            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
 
             pergunta = FindViewById<TextView>(Resource.Id.txtPergunta);
             btnSalvarNota = FindViewById<Button>(Resource.Id.btnSalvarNota);

@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
 using RodaDaVidaShared.Tabelas;
@@ -20,8 +21,9 @@ namespace RodaDaVidaAndroid.Telas
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            this.RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
+            RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
             usuarios = RodaDaVida.Current.dataBaseManager.GetUsuarios();
+            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
 
             if (usuarios.Count == 0)
             {

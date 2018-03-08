@@ -36,6 +36,7 @@ namespace RodaDaVidaAndroid.Telas
         {
             base.OnCreate(savedInstanceState);
             this.RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
+            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
 
             //Definindo layout
             SetContentView(Resource.Layout.Tarefa);

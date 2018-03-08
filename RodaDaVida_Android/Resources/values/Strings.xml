@@ -17,4 +17,6 @@
     <item>Ecológica</item>
     <item>Lazer</item>
   </string-array>
+  <string name="open_drawer">abrir</string>
+  <string name="close_drawer">fechar</string>
 </resources>

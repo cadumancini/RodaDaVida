@@ -10,6 +10,8 @@ using RodaDaVidaShared.Tabelas;
 using System;
 using Android.Support.V7.App;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Support.V4.Widget;
+using Android.Views;
 
 namespace RodaDaVidaAndroid.Telas
 {
@@ -23,13 +25,16 @@ namespace RodaDaVidaAndroid.Telas
         IList<Tarefa> tarefas;
         //ListView notasListView;
         ListView tarefasListView;
-        Button btnTodasTarefas;
+        //Button btnTodasTarefas;
         FloatingActionButton btnNovaTarefa;
+        DrawerLayout drawerLayout;
+        NavigationView navigationView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
+            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
 
             //Definindo layout
             SetContentView(Resource.Layout.VisaoGeral);
@@ -38,14 +43,38 @@ namespace RodaDaVidaAndroid.Telas
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             //Toolbar will now take on default actionbar characteristics
             SetSupportActionBar(toolbar);
-
             SupportActionBar.Title = "Visão Geral - Roda da Vida";
+
+            //Enable support action bar to display hamburger
+            SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
+            drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            navigationView.NavigationItemSelected += (sender, e) => {
+                e.MenuItem.SetChecked(true);
+                switch (e.MenuItem.ItemId)
+                {
+                    case (Resource.Id.nav_visao_geral):
+                        drawerLayout.CloseDrawers();
+                        break;
+                    case (Resource.Id.nav_todas_tarefas):
+                        var telaTodasTarefas = new Intent(this, typeof(TodasTarefas));
+                        StartActivity(telaTodasTarefas);
+                        break;
+                    case (Resource.Id.nav_config):
+                        Toast.MakeText(this, "selecionando menu Configurações", ToastLength.Short).Show();
+                        break;
+                }
+                e.MenuItem.SetChecked(false);
+                drawerLayout.CloseDrawers();
+            };
 
             //Buscando os controles
             //notasListView = FindViewById<ListView>(Resource.Id.NotasList);
             tarefasListView = FindViewById<ListView>(Resource.Id.ProximasTarefasList);
             btnNovaTarefa = FindViewById<FloatingActionButton>(Resource.Id.btnNovaTarefa);
-            btnTodasTarefas = FindViewById<Button>(Resource.Id.btnTodasTarefas);
+            //btnTodasTarefas = FindViewById<Button>(Resource.Id.btnTodasTarefas);
 
             //Pegando clique em nova tarefa
             if (btnNovaTarefa != null)
@@ -68,6 +97,7 @@ namespace RodaDaVidaAndroid.Telas
                 };
             }
 
+            /*
             //Pegando clique em botão para mostrar todas as tarefas
             if(btnTodasTarefas != null)
             {
@@ -76,8 +106,19 @@ namespace RodaDaVidaAndroid.Telas
                     var telaTodasTarefas = new Intent(this, typeof(TodasTarefas));
                     StartActivity(telaTodasTarefas);
                 };
-            }
+            }*/
 
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    drawerLayout.OpenDrawer(Android.Support.V4.View.GravityCompat.Start);
+                    return true;
+            }
+            return base.OnOptionsItemSelected(item);
         }
 
         protected override void OnResume()

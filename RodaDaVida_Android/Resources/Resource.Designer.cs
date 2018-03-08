@@ -2336,26 +2336,26 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020081
-			public const int avd_hide_password_1 = 2130837633;
-			
 			// aapt resource value: 0x7f020082
-			public const int avd_hide_password_2 = 2130837634;
+			public const int avd_hide_password_1 = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int avd_hide_password_3 = 2130837635;
+			public const int avd_hide_password_2 = 2130837635;
+			
+			// aapt resource value: 0x7f020084
+			public const int avd_hide_password_3 = 2130837636;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020084
-			public const int avd_show_password_1 = 2130837636;
-			
 			// aapt resource value: 0x7f020085
-			public const int avd_show_password_2 = 2130837637;
+			public const int avd_show_password_1 = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int avd_show_password_3 = 2130837638;
+			public const int avd_show_password_2 = 2130837638;
+			
+			// aapt resource value: 0x7f020087
+			public const int avd_show_password_3 = 2130837639;
 			
 			// aapt resource value: 0x7f020055
 			public const int common_full_open_on_phone = 2130837589;
@@ -2442,52 +2442,55 @@ namespace RodaDaVidaAndroid
 			public const int ic_add = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int Icon = 2130837617;
+			public const int ic_menu = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int navigation_empty_icon = 2130837618;
+			public const int Icon = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int notification_action_background = 2130837619;
+			public const int navigation_empty_icon = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int notification_bg = 2130837620;
+			public const int notification_action_background = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int notification_bg_low = 2130837621;
+			public const int notification_bg = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int notification_bg_low_normal = 2130837622;
+			public const int notification_bg_low = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int notification_bg_low_pressed = 2130837623;
+			public const int notification_bg_low_normal = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int notification_bg_normal = 2130837624;
+			public const int notification_bg_low_pressed = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int notification_bg_normal_pressed = 2130837625;
+			public const int notification_bg_normal = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int notification_icon_background = 2130837626;
-			
-			// aapt resource value: 0x7f02007f
-			public const int notification_template_icon_bg = 2130837631;
-			
-			// aapt resource value: 0x7f020080
-			public const int notification_template_icon_low_bg = 2130837632;
+			public const int notification_bg_normal_pressed = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int notification_tile_bg = 2130837627;
+			public const int notification_icon_background = 2130837627;
+			
+			// aapt resource value: 0x7f020080
+			public const int notification_template_icon_bg = 2130837632;
+			
+			// aapt resource value: 0x7f020081
+			public const int notification_template_icon_low_bg = 2130837633;
 			
 			// aapt resource value: 0x7f02007c
-			public const int notify_panel_notification_icon_bg = 2130837628;
+			public const int notification_tile_bg = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int tooltip_frame_dark = 2130837629;
+			public const int notify_panel_notification_icon_bg = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int tooltip_frame_light = 2130837630;
+			public const int tooltip_frame_dark = 2130837630;
+			
+			// aapt resource value: 0x7f02007f
+			public const int tooltip_frame_light = 2130837631;
 			
 			static Drawable()
 			{
@@ -2508,8 +2511,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a003a
 			public const int CTRL = 2131361850;
 			
-			// aapt resource value: 0x7f0a00df
-			public const int Circulo = 2131362015;
+			// aapt resource value: 0x7f0a00e0
+			public const int Circulo = 2131362016;
 			
 			// aapt resource value: 0x7f0a003b
 			public const int FUNCTION = 2131361851;
@@ -2523,17 +2526,17 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a00de
 			public const int NotaArea = 2131362014;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int ProxTarNomeArea = 2131361981;
-			
 			// aapt resource value: 0x7f0a00be
-			public const int ProxTarNomeCurto = 2131361982;
+			public const int ProxTarNomeArea = 2131361982;
+			
+			// aapt resource value: 0x7f0a00bd
+			public const int ProxTarNomeCurto = 2131361981;
 			
 			// aapt resource value: 0x7f0a00bf
 			public const int ProxTarQuando = 2131361983;
 			
-			// aapt resource value: 0x7f0a00e1
-			public const int ProximasTarefasList = 2131362017;
+			// aapt resource value: 0x7f0a00e2
+			public const int ProximasTarefasList = 2131362018;
 			
 			// aapt resource value: 0x7f0a003d
 			public const int SHIFT = 2131361853;
@@ -2676,9 +2679,6 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a00d1
 			public const int btnTarefaSalvar = 2131362001;
 			
-			// aapt resource value: 0x7f0a00e2
-			public const int btnTodasTarefas = 2131362018;
-			
 			// aapt resource value: 0x7f0a0069
 			public const int buttonPanel = 2131361897;
 			
@@ -2756,6 +2756,9 @@ namespace RodaDaVidaAndroid
 			
 			// aapt resource value: 0x7f0a0028
 			public const int disableHome = 2131361832;
+			
+			// aapt resource value: 0x7f0a00df
+			public const int drawer_layout = 2131362015;
 			
 			// aapt resource value: 0x7f0a00a7
 			public const int editNome = 2131361959;
@@ -2877,8 +2880,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a00dc
 			public const int lstUsuarioArea = 2131362012;
 			
-			// aapt resource value: 0x7f0a00e5
-			public const int masked = 2131362021;
+			// aapt resource value: 0x7f0a00e6
+			public const int masked = 2131362022;
 			
 			// aapt resource value: 0x7f0a00af
 			public const int media_actions = 2131361967;
@@ -2894,6 +2897,18 @@ namespace RodaDaVidaAndroid
 			
 			// aapt resource value: 0x7f0a002e
 			public const int multiply = 2131361838;
+			
+			// aapt resource value: 0x7f0a00e9
+			public const int nav_config = 2131362025;
+			
+			// aapt resource value: 0x7f0a00e8
+			public const int nav_todas_tarefas = 2131362024;
+			
+			// aapt resource value: 0x7f0a00e4
+			public const int nav_view = 2131362020;
+			
+			// aapt resource value: 0x7f0a00e7
+			public const int nav_visao_geral = 2131362023;
 			
 			// aapt resource value: 0x7f0a009e
 			public const int navigation_header_container = 2131361950;
@@ -3144,8 +3159,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a0091
 			public const int txtPergunta = 2131361937;
 			
-			// aapt resource value: 0x7f0a00e0
-			public const int txtProximasTarefas = 2131362016;
+			// aapt resource value: 0x7f0a00e1
+			public const int txtProximasTarefas = 2131362017;
 			
 			// aapt resource value: 0x7f0a00a6
 			public const int txtSeuNome = 2131361958;
@@ -3180,8 +3195,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
 			
-			// aapt resource value: 0x7f0a00e4
-			public const int visible = 2131362020;
+			// aapt resource value: 0x7f0a00e5
+			public const int visible = 2131362021;
 			
 			// aapt resource value: 0x7f0a0021
 			public const int wide = 2131361825;
@@ -3381,88 +3396,91 @@ namespace RodaDaVidaAndroid
 			public const int design_text_input_password_icon = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int Main = 2130903083;
+			public const int header = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int notification_action = 2130903084;
+			public const int Main = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int notification_action_tombstone = 2130903085;
+			public const int notification_action = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int notification_media_action = 2130903086;
+			public const int notification_action_tombstone = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int notification_media_cancel_action = 2130903087;
+			public const int notification_media_action = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int notification_template_big_media = 2130903088;
+			public const int notification_media_cancel_action = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int notification_template_big_media_custom = 2130903089;
+			public const int notification_template_big_media = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int notification_template_big_media_narrow = 2130903090;
+			public const int notification_template_big_media_custom = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int notification_template_big_media_narrow_custom = 2130903091;
+			public const int notification_template_big_media_narrow = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int notification_template_custom_big = 2130903092;
+			public const int notification_template_big_media_narrow_custom = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int notification_template_icon_group = 2130903093;
+			public const int notification_template_custom_big = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int notification_template_lines_media = 2130903094;
+			public const int notification_template_icon_group = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int notification_template_media = 2130903095;
+			public const int notification_template_lines_media = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int notification_template_media_custom = 2130903096;
+			public const int notification_template_media = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int notification_template_part_chronometer = 2130903097;
+			public const int notification_template_media_custom = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int notification_template_part_time = 2130903098;
+			public const int notification_template_part_chronometer = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int ProximasTarefasListItem = 2130903099;
+			public const int notification_template_part_time = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int select_dialog_item_material = 2130903100;
+			public const int ProximasTarefasListItem = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int select_dialog_multichoice_material = 2130903101;
+			public const int select_dialog_item_material = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int select_dialog_singlechoice_material = 2130903102;
+			public const int select_dialog_multichoice_material = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int support_simple_spinner_dropdown_item = 2130903103;
+			public const int select_dialog_singlechoice_material = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int Tarefa = 2130903104;
+			public const int support_simple_spinner_dropdown_item = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int TodasTarefas = 2130903105;
+			public const int Tarefa = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int TodasTarefasListItem = 2130903106;
+			public const int TodasTarefas = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int toolbar = 2130903107;
+			public const int TodasTarefasListItem = 2130903107;
 			
 			// aapt resource value: 0x7f030044
-			public const int tooltip = 2130903108;
+			public const int toolbar = 2130903108;
 			
 			// aapt resource value: 0x7f030045
-			public const int UsuarioAreaListItem = 2130903109;
+			public const int tooltip = 2130903109;
 			
 			// aapt resource value: 0x7f030046
-			public const int VisaoGeral = 2130903110;
+			public const int UsuarioAreaListItem = 2130903110;
+			
+			// aapt resource value: 0x7f030047
+			public const int VisaoGeral = 2130903111;
 			
 			static Layout()
 			{
@@ -3470,6 +3488,22 @@ namespace RodaDaVidaAndroid
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0e0000
+			public const int menu = 2131623936;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}
@@ -3588,6 +3622,9 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f070034
 			public const int character_counter_pattern = 2131165236;
 			
+			// aapt resource value: 0x7f07003e
+			public const int close_drawer = 2131165246;
+			
 			// aapt resource value: 0x7f070001
 			public const int common_google_play_services_enable_button = 2131165185;
 			
@@ -3638,6 +3675,9 @@ namespace RodaDaVidaAndroid
 			
 			// aapt resource value: 0x7f070010
 			public const int common_signin_button_text_long = 2131165200;
+			
+			// aapt resource value: 0x7f07003d
+			public const int open_drawer = 2131165245;
 			
 			// aapt resource value: 0x7f070035
 			public const int password_toggle_content_description = 2131165237;
