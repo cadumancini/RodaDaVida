@@ -63,7 +63,8 @@ namespace RodaDaVidaAndroid.Telas
                         StartActivity(telaTodasTarefas);
                         break;
                     case (Resource.Id.nav_config):
-                        Toast.MakeText(this, "selecionando menu Configurações", ToastLength.Short).Show();
+                        var telaConfigs = new Intent(this, typeof(Configs));
+                        StartActivity(telaConfigs);
                         break;
                 }
                 e.MenuItem.SetChecked(false);

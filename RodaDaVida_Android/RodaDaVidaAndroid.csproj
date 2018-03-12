@@ -176,11 +176,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\ConfigsListAdapter.cs" />
     <Compile Include="Adapters\ProxTarefasItemListAdapter.cs" />
     <Compile Include="Adapters\TodasTarefasItemListAdapter.cs" />
     <Compile Include="Adapters\UsuarioAreaItemListAdapter.cs" />
+    <Compile Include="Classes\ConfigItem.cs" />
     <Compile Include="RodaDaVida.cs" />
     <Compile Include="Telas\AutoAvaliacao.cs" />
+    <Compile Include="Telas\Configs.cs" />
     <Compile Include="Telas\MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -230,6 +233,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\menu\menu.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Configs.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ConfigsListItem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -9,11 +9,6 @@
       android:orientation="vertical"
       android:layout_width="fill_parent"
       android:layout_height="fill_parent">
-    <!--
-    <ListView
-        android:id="@+id/NotasList"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" /> -->
     <include
       android:id="@+id/toolbar"
       layout="@layout/toolbar" />
@@ -25,15 +20,6 @@
         android:layout_below="@id/toolbar"
         android:layout_marginLeft="16dp" 
         android:layout_marginRight="16dp" />
-    <!--
-    <Button
-        android:text="Nova Tarefa"
-        android:id="@+id/btnNovaTarefa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textAllCaps="false"
-        android:layout_gravity="center" /> -->
     <TextView
         android:text="Próximas Tarefas:"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -50,19 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtProximasTarefas"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />/>
-    <!--
-    <Button
-        android:text="Todas as Tarefas"
-        android:id="@+id/btnTodasTarefas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textAllCaps="false"
-        android:layout_gravity="center"
-        android:layout_below="@id/ProximasTarefasList"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" /> -->
+        android:layout_marginRight="16dp" />
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnNovaTarefa"
         android:layout_width="wrap_content"
