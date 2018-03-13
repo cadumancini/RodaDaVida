@@ -13,59 +13,99 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:id="@+id/txtTarefaArea" />
+        android:id="@+id/txtTarefaArea" 
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"/>
     <Spinner
         android:id="@+id/spinnerAreas"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:prompt="@string/areas_prompt" />
+        android:prompt="@string/areas_prompt" 
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"/>
     <TextView
         android:text="Nome curto:"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:id="@+id/txtTarefaNome" />
+        android:id="@+id/txtTarefaNome"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
     <EditText
         android:inputType="textCapSentences"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTarefaNome" />
+        android:id="@+id/editTarefaNome"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
     <TextView
         android:text="Descrição:"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:id="@+id/txtTarefaDescricao" />
+        android:id="@+id/txtTarefaDescricao"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
     <EditText
         android:inputType="textCapSentences"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTarefaDescricao" />
+        android:id="@+id/editTarefaDescricao"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
     <TextView
         android:text="Onde:"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:id="@+id/txtTarefaOnde" />
+        android:id="@+id/txtTarefaOnde"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
     <EditText
         android:inputType="textCapSentences"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTarefaOnde" />
+        android:id="@+id/editTarefaOnde"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
     <TextView
         android:text="Quando:"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:id="@+id/txtTarefaQuando" />
+        android:id="@+id/txtTarefaQuando"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" >
         <Button
             android:text="Selecionar uma Data"
             android:id="@+id/btnSelecionarData"
@@ -87,17 +127,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:id="@+id/txtTarefaComo" />
+        android:id="@+id/txtTarefaComo"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
     <EditText
         android:inputType="textCapSentences"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTarefaComo" />
+        android:id="@+id/editTarefaComo"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
     <CheckBox
         android:text="Concluída"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/chckTarefaConcluida" />
+        android:id="@+id/chckTarefaConcluida"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
     <Button
         android:text="Excluir Tarefa"
         android:id="@+id/btnTarefaExcluir"
@@ -105,7 +157,11 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAllCaps="false"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
     <Button
         android:text="Salvar"
         android:id="@+id/btnTarefaSalvar"
@@ -113,5 +169,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAllCaps="false"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
 </LinearLayout>
