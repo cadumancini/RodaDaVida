@@ -10,15 +10,14 @@
     <!--We will be using the toolbar so no need to show ActionBar-->
     <item name="windowActionBar">false</item>
     <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette-->
-    <!-- colorPrimary is used for the default action bar background -->
+    <!-- colorPrimary: cor da barra -->
     <item name="colorPrimary">#2196F3</item>
-    <!-- colorPrimaryDark is used for the status bar -->
+    <!-- colorPrimaryDark: cor mais escura, pra statusbar -->
     <item name="colorPrimaryDark">#1565C0</item>
     <item name="android:statusBarColor">#1565C0</item>
-    <!-- colorAccent is used as the default value for colorControlActivated
-         which is used to tint widgets -->
-    <item name="colorAccent">#FF4081</item>
-
+    <!-- colorAccent: cor dos widgets (cursor, FAB's, toggles, etc) -->
+    <item name="colorAccent">#01579B</item>
+    <!-- colorControlHighlight: cor quando seleciona um widget -->
     <item name="colorControlHighlight">#E3F2FD</item>
   	<!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
