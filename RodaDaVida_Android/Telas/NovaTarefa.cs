@@ -309,8 +309,7 @@ namespace RodaDaVidaAndroid.Telas
                 };
             }
         }
-
-
+        
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             //Back button pressed -> toggle event

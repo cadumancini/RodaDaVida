@@ -11,6 +11,7 @@ using RodaDaVidaAndroid.Classes;
 using RodaDaVidaShared.Tabelas;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Runtime;
+using System;
 
 namespace RodaDaVidaAndroid.Telas
 {
@@ -79,6 +80,30 @@ namespace RodaDaVidaAndroid.Telas
 
                         alertDialog = dialogBuilder.Create();
                         alertDialog.Show();
+                    }
+                    else if(configsItens[e.Position].ID.Equals("reavaliar"))
+                    {
+                        var texto = "Tem certeza que deseja fazer sua reavaliação? \n" +
+                        "Este processo irá excluir todas as notas salvas até aqui.";
+                        var builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+                        builder.SetMessage(texto);
+                        builder.SetPositiveButton("Sim", async (s, ev) =>
+                        {
+                            foreach(UsuarioArea uArea in RodaDaVida.Current.dataBaseManager.GetUsuariosAreas("NOTAS"))
+                            {
+                                uArea.Nota = 0;
+                                uArea.DataUltReducao = DateTime.Now;
+                                RodaDaVida.Current.dataBaseManager.saveUsuarioArea(uArea);
+                            }
+                            var telaAutoAvaliacao = new Intent(this, typeof(AutoAvaliacao)).SetFlags(ActivityFlags.ReorderToFront);
+                            StartActivity(telaAutoAvaliacao);
+                            Finish();
+                        });
+                        builder.SetNegativeButton("Não", (s, ev) =>
+                        {
+                            OnBackPressed();
+                        });
+                        builder.Create().Show();
                     }
                 };
             }

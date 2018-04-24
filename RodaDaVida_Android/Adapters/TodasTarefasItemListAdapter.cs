@@ -57,9 +57,9 @@ namespace RodaDaVidaAndroid.Adapters
             txtOnde.Text = item.Onde;
             txtComo.Text = item.Como;
             if (item.Concluida)
-                txtConcluida.Text = "Concluída";
+                txtConcluida.Text = "Status: Concluída";
             else
-                txtConcluida.Text = "Não concluída";
+                txtConcluida.Text = "Status: Não concluída";
 
             //Finally return the view
             return view;

@@ -10,11 +10,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="NomeCurto"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="@dimen/abc_text_size_headline_material"  />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp">
         <TextView
             android:id="@+id/TodTarNomeArea"
             android:layout_width="wrap_content"
@@ -31,7 +34,8 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp">
         <TextView
             android:id="@+id/TodTarOnde"
             android:layout_width="wrap_content"
