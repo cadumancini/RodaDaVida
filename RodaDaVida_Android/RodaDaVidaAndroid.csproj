@@ -176,10 +176,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapters\ConfigsListAdapter.cs" />
-    <Compile Include="Adapters\ProxTarefasItemListAdapter.cs" />
-    <Compile Include="Adapters\TodasTarefasItemListAdapter.cs" />
-    <Compile Include="Adapters\UsuarioAreaItemListAdapter.cs" />
+    <Compile Include="Telas\Adapters\ConfigsListAdapter.cs" />
+    <Compile Include="Telas\Adapters\ProxTarefasItemListAdapter.cs" />
+    <Compile Include="Telas\Adapters\TodasTarefasItemListAdapter.cs" />
+    <Compile Include="Telas\Adapters\UsuarioAreaItemListAdapter.cs" />
     <Compile Include="Classes\ConfigItem.cs" />
     <Compile Include="RodaDaVida.cs" />
     <Compile Include="Telas\AutoAvaliacao.cs" />

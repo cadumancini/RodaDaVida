@@ -15,11 +15,10 @@
     <rodadavidaandroid.views.CirculoTeste
         android:id="@+id/Circulo"
         android:gravity="center"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="400dp"
-        android:layout_below="@id/toolbar"
-        android:layout_marginLeft="16dp" 
-        android:layout_marginRight="16dp" />
+        android:layout_height="450dp"
+        android:layout_below="@id/toolbar" />
     <TextView
         android:text="Próximas Tarefas:"
         android:textAppearance="?android:attr/textAppearanceMedium"
