@@ -312,59 +312,71 @@ namespace RodaDaVidaAndroid.Views
             canvas.DrawText("Econômica", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 295)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 225)), paintAreas);
             canvas.Restore();
 
+            angleRadians = (Math.PI / 180.0) * 120;
+            canvas.DrawText("1", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 50)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 50)), paintNumeros);
+            canvas.DrawText("2", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 75)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 75)), paintNumeros);
+            canvas.DrawText("3", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 100)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 100)), paintNumeros);
+            canvas.DrawText("4", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 125)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 125)), paintNumeros);
+            canvas.DrawText("5", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 150)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 150)), paintNumeros);
+            canvas.DrawText("6", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 175)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 175)), paintNumeros);
+            canvas.DrawText("7", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 205)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 205)), paintNumeros);
+            canvas.DrawText("8", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 230)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 230)), paintNumeros);
+            canvas.DrawText("9", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 255)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 255)), paintNumeros);
+            canvas.DrawText("10", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 280)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 280)), paintNumeros);
+            canvas.Save();
+            canvas.Rotate(30, startX - 295, startY + 225);
+            canvas.DrawText("Social", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 295)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 225)), paintAreas);
+            canvas.Restore();
+            
+            angleRadians = (Math.PI / 180.0) * 148;
+            canvas.DrawText("1", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 45)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 45)), paintNumeros);
+            canvas.DrawText("2", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 70)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 70)), paintNumeros);
+            canvas.DrawText("3", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 95)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 95)), paintNumeros);
+            canvas.DrawText("4", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 120)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 120)), paintNumeros);
+            canvas.DrawText("5", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 145)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 145)), paintNumeros);
+            canvas.DrawText("6", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 170)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 170)), paintNumeros);
+            canvas.DrawText("7", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 200)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 200)), paintNumeros);
+            canvas.DrawText("8", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 225)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 225)), paintNumeros);
+            canvas.DrawText("9", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 250)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 250)), paintNumeros);
+            canvas.DrawText("10", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 275)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 275)), paintNumeros);
+            canvas.Save();
+            canvas.Rotate(60, startX - 260, startY + 110);
+            canvas.DrawText("Espiritual", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 263)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 263)), paintAreas);
+            canvas.Restore();
+
+            
+            angleRadians = (Math.PI / 180.0) * 208;
+            canvas.DrawText("1", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 45)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 45)), paintNumeros);
+            canvas.DrawText("2", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 70)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 70)), paintNumeros);
+            canvas.DrawText("3", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 95)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 95)), paintNumeros);
+            canvas.DrawText("4", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 120)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 120)), paintNumeros);
+            canvas.DrawText("5", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 145)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 145)), paintNumeros);
+            canvas.DrawText("6", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 170)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 170)), paintNumeros);
+            canvas.DrawText("7", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 200)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 200)), paintNumeros);
+            canvas.DrawText("8", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 225)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 225)), paintNumeros);
+            canvas.DrawText("9", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 250)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 250)), paintNumeros);
+            canvas.DrawText("10", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 275)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 275)), paintNumeros);
+            canvas.Save();
+            canvas.Rotate(-60, startX - 260, startY - 105);
+            canvas.DrawText("Ecológica", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 263)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 263)), paintAreas);
+            canvas.Restore();
+
+            angleRadians = (Math.PI / 180.0) * 240;
+            canvas.DrawText("1", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 40)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 40)), paintNumeros);
+            canvas.DrawText("2", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 65)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 65)), paintNumeros);
+            canvas.DrawText("3", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 90)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 90)), paintNumeros);
+            canvas.DrawText("4", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 115)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 115)), paintNumeros);
+            canvas.DrawText("5", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 140)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 140)), paintNumeros);
+            canvas.DrawText("6", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 165)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 165)), paintNumeros);
+            canvas.DrawText("7", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 195)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 195)), paintNumeros);
+            canvas.DrawText("8", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 220)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 220)), paintNumeros);
+            canvas.DrawText("9", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 245)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 245)), paintNumeros);
+            canvas.DrawText("10", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 270)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 270)), paintNumeros);
+            canvas.Save();
+            canvas.Rotate(-30, startX - 296, startY - 205);
+            canvas.DrawText("Lazer", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 295)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 205)), paintAreas);
+            canvas.Restore();
             /*
-            angleRadians = (Math.PI / 180.0) * 122;
-            canvas.DrawText("1", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 40)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 40)), paint);
-            canvas.DrawText("2", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 60)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 60)), paint);
-            canvas.DrawText("3", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 80)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 80)), paint);
-            canvas.DrawText("4", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 100)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 100)), paint);
-            canvas.DrawText("5", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 120)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 120)), paint);
-            canvas.DrawText("6", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 140)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 140)), paint);
-            canvas.DrawText("7", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 160)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 160)), paint);
-            canvas.DrawText("8", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 180)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 180)), paint);
-            canvas.DrawText("9", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 200)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 200)), paint);
-            canvas.DrawText("10", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 220)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 220)), paint);
-            canvas.DrawText("Social", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 280)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 250)), paintAreas);
-
-            angleRadians = (Math.PI / 180.0) * 152;
-            canvas.DrawText("1", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 40)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 40)), paint);
-            canvas.DrawText("2", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 60)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 60)), paint);
-            canvas.DrawText("3", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 80)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 80)), paint);
-            canvas.DrawText("4", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 100)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 100)), paint);
-            canvas.DrawText("5", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 120)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 120)), paint);
-            canvas.DrawText("6", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 140)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 140)), paint);
-            canvas.DrawText("7", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 160)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 160)), paint);
-            canvas.DrawText("8", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 180)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 180)), paint);
-            canvas.DrawText("9", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 200)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 200)), paint);
-            canvas.DrawText("10", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 220)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 220)), paint);
-            canvas.DrawText("Espiritual", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 260)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 240)), paint);
-
-            angleRadians = (Math.PI / 180.0) * 212;
-            canvas.DrawText("1", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 40)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 40)), paint);
-            canvas.DrawText("2", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 60)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 60)), paint);
-            canvas.DrawText("3", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 80)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 80)), paint);
-            canvas.DrawText("4", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 100)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 100)), paint);
-            canvas.DrawText("5", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 120)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 120)), paint);
-            canvas.DrawText("6", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 140)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 140)), paint);
-            canvas.DrawText("7", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 160)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 160)), paint);
-            canvas.DrawText("8", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 180)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 180)), paint);
-            canvas.DrawText("9", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 200)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 200)), paint);
-            canvas.DrawText("10", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 220)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 220)), paint);
-            canvas.DrawText("Ecológica", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 260)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 250)), paint);
-
-            angleRadians = (Math.PI / 180.0) * 242;
-            canvas.DrawText("1", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 40)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 40)), paint);
-            canvas.DrawText("2", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 60)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 60)), paint);
-            canvas.DrawText("3", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 80)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 80)), paint);
-            canvas.DrawText("4", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 100)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 100)), paint);
-            canvas.DrawText("5", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 120)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 120)), paint);
-            canvas.DrawText("6", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 140)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 140)), paint);
-            canvas.DrawText("7", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 160)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 160)), paint);
-            canvas.DrawText("8", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 180)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 180)), paint);
-            canvas.DrawText("9", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 200)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 200)), paint);
-            canvas.DrawText("10", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 220)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 220)), paint);
-            canvas.DrawText("Lazer", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 240)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 240)), paint);
-
             angleRadians = (Math.PI / 180.0) * 302;
             canvas.DrawText("1", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 40)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 40)), paint);
             canvas.DrawText("2", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 60)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 60)), paint);
@@ -380,7 +392,7 @@ namespace RodaDaVidaAndroid.Views
 
             angleRadians = (Math.PI / 180.0) * 332;
             canvas.DrawText("1", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 40)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 40)), paint);
-            canvas.DrawText("2", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 60)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 60)), paint);
+            canvas.DrawText("2", Convert.ToSingle(startX + (Math                                                                                    ''''''''''''''''''''''''''''''''''.Cos(angleRadians) * 60)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 60)), paint);
             canvas.DrawText("3", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 80)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 80)), paint);
             canvas.DrawText("4", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 100)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 100)), paint);
             canvas.DrawText("5", Convert.ToSingle(startX + (Math.Cos(angleRadians) * 120)), Convert.ToSingle(startY + (Math.Sin(angleRadians) * 120)), paint);
