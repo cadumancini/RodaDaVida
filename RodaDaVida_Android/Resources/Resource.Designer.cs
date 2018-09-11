@@ -2544,8 +2544,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a00c5
 			public const int ProxTarQuando = 2131361989;
 			
-			// aapt resource value: 0x7f0a00e7
-			public const int ProximasTarefasList = 2131362023;
+			// aapt resource value: 0x7f0a00e8
+			public const int ProximasTarefasList = 2131362024;
 			
 			// aapt resource value: 0x7f0a003d
 			public const int SHIFT = 2131361853;
@@ -2673,8 +2673,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a00ae
 			public const int btnCadastrar = 2131361966;
 			
-			// aapt resource value: 0x7f0a00e8
-			public const int btnNovaTarefa = 2131362024;
+			// aapt resource value: 0x7f0a00e9
+			public const int btnNovaTarefa = 2131362025;
 			
 			// aapt resource value: 0x7f0a0093
 			public const int btnSalvarNota = 2131361939;
@@ -2895,8 +2895,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a00e1
 			public const int lstUsuarioArea = 2131362017;
 			
-			// aapt resource value: 0x7f0a00eb
-			public const int masked = 2131362027;
+			// aapt resource value: 0x7f0a00ec
+			public const int masked = 2131362028;
 			
 			// aapt resource value: 0x7f0a00b5
 			public const int media_actions = 2131361973;
@@ -2913,17 +2913,17 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a002e
 			public const int multiply = 2131361838;
 			
+			// aapt resource value: 0x7f0a00ef
+			public const int nav_config = 2131362031;
+			
 			// aapt resource value: 0x7f0a00ee
-			public const int nav_config = 2131362030;
+			public const int nav_todas_tarefas = 2131362030;
+			
+			// aapt resource value: 0x7f0a00ea
+			public const int nav_view = 2131362026;
 			
 			// aapt resource value: 0x7f0a00ed
-			public const int nav_todas_tarefas = 2131362029;
-			
-			// aapt resource value: 0x7f0a00e9
-			public const int nav_view = 2131362025;
-			
-			// aapt resource value: 0x7f0a00ec
-			public const int nav_visao_geral = 2131362028;
+			public const int nav_visao_geral = 2131362029;
 			
 			// aapt resource value: 0x7f0a00a2
 			public const int navigation_header_container = 2131361954;
@@ -3177,6 +3177,9 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a00e6
 			public const int txtProximasTarefas = 2131362022;
 			
+			// aapt resource value: 0x7f0a00e7
+			public const int txtSemTarefas = 2131362023;
+			
 			// aapt resource value: 0x7f0a00ac
 			public const int txtSeuNome = 2131361964;
 			
@@ -3210,8 +3213,8 @@ namespace RodaDaVidaAndroid
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
 			
-			// aapt resource value: 0x7f0a00ea
-			public const int visible = 2131362026;
+			// aapt resource value: 0x7f0a00eb
+			public const int visible = 2131362027;
 			
 			// aapt resource value: 0x7f0a0021
 			public const int wide = 2131361825;

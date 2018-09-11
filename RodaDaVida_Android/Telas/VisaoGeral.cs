@@ -29,6 +29,7 @@ namespace RodaDaVidaAndroid.Telas
         FloatingActionButton btnNovaTarefa;
         DrawerLayout drawerLayout;
         NavigationView navigationView;
+        TextView chamadaTarefa;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -75,6 +76,7 @@ namespace RodaDaVidaAndroid.Telas
             //notasListView = FindViewById<ListView>(Resource.Id.NotasList);
             tarefasListView = FindViewById<ListView>(Resource.Id.ProximasTarefasList);
             btnNovaTarefa = FindViewById<FloatingActionButton>(Resource.Id.btnNovaTarefa);
+            chamadaTarefa = FindViewById<TextView>(Resource.Id.txtSemTarefas);
             //btnTodasTarefas = FindViewById<Button>(Resource.Id.btnTodasTarefas);
 
             //Pegando clique em nova tarefa
@@ -132,6 +134,7 @@ namespace RodaDaVidaAndroid.Telas
             //Deixando lista de tarefas apenas com as 10 primeiras da lista
             if(tarefas.Count > 10)
             {
+                chamadaTarefa.Visibility = ViewStates.Invisible;
                 IList<Tarefa> tarefasTmp = new List<Tarefa>();
                 int idx = 0;
                 foreach(Tarefa tmp in tarefas)
@@ -143,6 +146,11 @@ namespace RodaDaVidaAndroid.Telas
                 }
                 tarefas = tarefasTmp;
             }
+
+            if (tarefas.Count == 0) // Não tem nenhuma tarefa. Exibir chamada para Nova Tarefa
+                chamadaTarefa.Visibility = ViewStates.Visible;
+            else
+                chamadaTarefa.Visibility = ViewStates.Gone;
 
             //Criando os Adapters
             //notasListAdapter = new UsuarioAreaItemListAdapter(this, notas);

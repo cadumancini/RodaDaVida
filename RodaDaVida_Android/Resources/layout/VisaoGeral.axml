@@ -5,49 +5,62 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true">
-  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-      android:orientation="vertical"
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent">
-    <include
-      android:id="@+id/toolbar"
-      layout="@layout/toolbar" />
-    <rodadavidaandroid.views.CirculoTeste
-        android:id="@+id/Circulo"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="450dp"
-        android:layout_below="@id/toolbar" />
-    <TextView
-        android:text="Próximas Tarefas:"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:id="@+id/txtProximasTarefas"
-        android:layout_below="@id/Circulo" 
-        android:layout_marginLeft="16dp" 
-        android:layout_marginRight="16dp" />
-    <ListView
-        android:id="@+id/ProximasTarefasList"
+    <RelativeLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtProximasTarefas"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnNovaTarefa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:elevation="2dp"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_add" />
-  </RelativeLayout>
-  <android.support.design.widget.NavigationView
+        android:layout_height="fill_parent">
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+        <rodadavidaandroid.views.CirculoTeste
+            android:id="@+id/Circulo"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="450dp"
+            android:layout_below="@id/toolbar" />
+        <TextView
+            android:text="Próximas Tarefas:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:id="@+id/txtProximasTarefas"
+            android:layout_below="@id/Circulo"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="32dp" />
+        <TextView
+            android:text="Você não tem tarefas a fazer. Clique no botão '+' para cadastrar uma!"
+            android:textSize="@dimen/abc_text_size_body_2_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtSemTarefas"
+            android:layout_gravity="center"
+            android:layout_below="@id/txtProximasTarefas"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="48dp" />
+        <ListView
+            android:id="@+id/ProximasTarefasList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtProximasTarefas"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp" />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnNovaTarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:elevation="2dp"
+            android:layout_weight="1"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_add" />
+    </RelativeLayout>
+    <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
